@@ -3,6 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3FE94D95-B151-46C4-AA61-2779D3D0A282}|..\\Database\\Database.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\database\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FE94D95-B151-46C4-AA61-2779D3D0A282}|..\\Database\\Database.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\database\\loaddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\Customer.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\customer\\hienthidanhsachkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}|..\\Showtime\\Showtime.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\showtime\\xoalichchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,9 +43,6 @@
       "AbsoluteMoniker": "D:0:0:{17F33017-5BDC-491F-AF89-47E0CBB27459}|..\\DataStructure\\DataStructure.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\datastructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FE94D95-B151-46C4-AA61-2779D3D0A282}|..\\Database\\Database.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\database\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\Customer.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\customer\\xoakhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,9 +53,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\Customer.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\customer\\suathongtinkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\Customer.csproj|c:\\users\\pc\\desktop\\nhom10_sourcecode\\customer\\hienthidanhsachkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Xoakhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -104,11 +107,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "LoadData.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\LoadData.cs",
+              "RelativeDocumentMoniker": "..\\Database\\LoadData.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\LoadData.cs",
+              "RelativeToolTip": "..\\Database\\LoadData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:02:07.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Xoalichchieu.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Xoalichchieu.cs",
               "RelativeDocumentMoniker": "..\\Showtime\\Xoalichchieu.cs",
@@ -121,46 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Themlichchieu.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Themlichchieu.cs",
-              "RelativeDocumentMoniker": "..\\Showtime\\Themlichchieu.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Themlichchieu.cs",
-              "RelativeToolTip": "..\\Showtime\\Themlichchieu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:09.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Hienthilichchieu.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Hienthilichchieu.cs",
-              "RelativeDocumentMoniker": "..\\Showtime\\Hienthilichchieu.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Hienthilichchieu.cs",
-              "RelativeToolTip": "..\\Showtime\\Hienthilichchieu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:05.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Xoaphim.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Xoaphim.cs",
-              "RelativeDocumentMoniker": "..\\Movies\\Xoaphim.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Xoaphim.cs",
-              "RelativeToolTip": "..\\Movies\\Xoaphim.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:03.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Timkiemphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Timkiemphim.cs",
               "RelativeDocumentMoniker": "..\\Movies\\Timkiemphim.cs",
@@ -168,12 +145,11 @@
               "RelativeToolTip": "..\\Movies\\Timkiemphim.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:02.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T16:01:02.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Themphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Themphim.cs",
               "RelativeDocumentMoniker": "..\\Movies\\Themphim.cs",
@@ -181,12 +157,11 @@
               "RelativeToolTip": "..\\Movies\\Themphim.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:01.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T16:01:01.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Hienthidanhsachphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Hienthidanhsachphim.cs",
               "RelativeDocumentMoniker": "..\\Movies\\Hienthidanhsachphim.cs",
@@ -194,116 +169,11 @@
               "RelativeToolTip": "..\\Movies\\Hienthidanhsachphim.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:01:00.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T16:01:00.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Suathongtinphim.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Suathongtinphim.cs",
-              "RelativeDocumentMoniker": "..\\Movies\\Suathongtinphim.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Suathongtinphim.cs",
-              "RelativeToolTip": "..\\Movies\\Suathongtinphim.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:57.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\DataStructure\\Program.cs",
-              "RelativeDocumentMoniker": "..\\DataStructure\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\DataStructure\\Program.cs",
-              "RelativeToolTip": "..\\DataStructure\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:50.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\Program.cs",
-              "RelativeDocumentMoniker": "..\\Database\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\Program.cs",
-              "RelativeToolTip": "..\\Database\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:47.102Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Xoakhachhang.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Xoakhachhang.cs",
-              "RelativeDocumentMoniker": "..\\Customer\\Xoakhachhang.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Xoakhachhang.cs",
-              "RelativeToolTip": "..\\Customer\\Xoakhachhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:43.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Timkiemkhachhang.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Timkiemkhachhang.cs",
-              "RelativeDocumentMoniker": "..\\Customer\\Timkiemkhachhang.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Timkiemkhachhang.cs",
-              "RelativeToolTip": "..\\Customer\\Timkiemkhachhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:42.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Themkhachhang.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Themkhachhang.cs",
-              "RelativeDocumentMoniker": "..\\Customer\\Themkhachhang.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Themkhachhang.cs",
-              "RelativeToolTip": "..\\Customer\\Themkhachhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:41.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Suathongtinkhachhang.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Suathongtinkhachhang.cs",
-              "RelativeDocumentMoniker": "..\\Customer\\Suathongtinkhachhang.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Suathongtinkhachhang.cs",
-              "RelativeToolTip": "..\\Customer\\Suathongtinkhachhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:00:39.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Main\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Main\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T14:26:46.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
               "Title": "Hienthidanhsachkhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Hienthidanhsachkhachhang.cs",
               "RelativeDocumentMoniker": "..\\Customer\\Hienthidanhsachkhachhang.cs",
@@ -316,7 +186,140 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
+              "Title": "SaveData.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\SaveData.cs",
+              "RelativeDocumentMoniker": "..\\Database\\SaveData.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Database\\SaveData.cs",
+              "RelativeToolTip": "..\\Database\\SaveData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:47.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Xoaphim.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Xoaphim.cs",
+              "RelativeDocumentMoniker": "..\\Movies\\Xoaphim.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Xoaphim.cs",
+              "RelativeToolTip": "..\\Movies\\Xoaphim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:01:03.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Hienthilichchieu.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Hienthilichchieu.cs",
+              "RelativeDocumentMoniker": "..\\Showtime\\Hienthilichchieu.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Hienthilichchieu.cs",
+              "RelativeToolTip": "..\\Showtime\\Hienthilichchieu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:01:05.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Themlichchieu.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Themlichchieu.cs",
+              "RelativeDocumentMoniker": "..\\Showtime\\Themlichchieu.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Showtime\\Themlichchieu.cs",
+              "RelativeToolTip": "..\\Showtime\\Themlichchieu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:01:09.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Suathongtinphim.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Suathongtinphim.cs",
+              "RelativeDocumentMoniker": "..\\Movies\\Suathongtinphim.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Movies\\Suathongtinphim.cs",
+              "RelativeToolTip": "..\\Movies\\Suathongtinphim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:57.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\DataStructure\\Program.cs",
+              "RelativeDocumentMoniker": "..\\DataStructure\\Program.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\DataStructure\\Program.cs",
+              "RelativeToolTip": "..\\DataStructure\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:50.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Xoakhachhang.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Xoakhachhang.cs",
+              "RelativeDocumentMoniker": "..\\Customer\\Xoakhachhang.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Xoakhachhang.cs",
+              "RelativeToolTip": "..\\Customer\\Xoakhachhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:43.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Timkiemkhachhang.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Timkiemkhachhang.cs",
+              "RelativeDocumentMoniker": "..\\Customer\\Timkiemkhachhang.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Timkiemkhachhang.cs",
+              "RelativeToolTip": "..\\Customer\\Timkiemkhachhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:42.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Themkhachhang.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Themkhachhang.cs",
+              "RelativeDocumentMoniker": "..\\Customer\\Themkhachhang.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Themkhachhang.cs",
+              "RelativeToolTip": "..\\Customer\\Themkhachhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:41.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Suathongtinkhachhang.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Suathongtinkhachhang.cs",
+              "RelativeDocumentMoniker": "..\\Customer\\Suathongtinkhachhang.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Customer\\Suathongtinkhachhang.cs",
+              "RelativeToolTip": "..\\Customer\\Suathongtinkhachhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T16:00:39.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Main\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SourceCode\\Main\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:26:46.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Xoaphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Xoaphim.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Xoaphim.cs",
@@ -328,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Hienthidanhsachkhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Hienthidanhsachkhachhang.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Hienthidanhsachkhachhang.cs",
@@ -340,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Suathongtinkhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Suathongtinkhachhang.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Suathongtinkhachhang.cs",
@@ -352,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Themkhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Themkhachhang.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Themkhachhang.cs",
@@ -364,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Timkiemkhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Timkiemkhachhang.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Timkiemkhachhang.cs",
@@ -376,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Xoakhachhang.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Xoakhachhang.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Customer\\Xoakhachhang.cs",
@@ -387,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Timkiemphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Timkiemphim.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Timkiemphim.cs",
@@ -399,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Themphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Themphim.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Themphim.cs",
@@ -411,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Suathongtinphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Suathongtinphim.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Suathongtinphim.cs",
@@ -423,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Hienthidanhsachphim.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Hienthidanhsachphim.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Movies\\Hienthidanhsachphim.cs",
@@ -435,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Xoalichchieu.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Xoalichchieu.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Xoalichchieu.cs",
@@ -447,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Themlichchieu.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Themlichchieu.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Themlichchieu.cs",
@@ -459,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Hienthilichchieu.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Hienthilichchieu.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Showtime\\Hienthilichchieu.cs",
@@ -471,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\Database\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\Database\\Program.cs",
@@ -483,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_Quanlirapchieuphim_sourcecode\\DataStructure\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\Nhom10_Quanlirapchieuphim_sourcecode\\DataStructure\\Program.cs",
