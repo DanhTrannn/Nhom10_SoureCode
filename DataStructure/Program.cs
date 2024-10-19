@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    internal class Program
-    {
-        struct customer
+    
+        public struct customer
         {
             private string id;
             private string name;
@@ -68,7 +67,7 @@ namespace DataStructure
         }
 
 
-        struct movies
+        public struct movies
         {
             private string movieID;
             private string movieName;
@@ -119,7 +118,7 @@ namespace DataStructure
         }
 
 
-        struct showtime
+        public struct showtime
         {
             private string movieID;
             private string show;
@@ -158,5 +157,4 @@ namespace DataStructure
                 return this.hall;
             }
         }
-    }
 }
