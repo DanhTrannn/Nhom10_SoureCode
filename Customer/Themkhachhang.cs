@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Customer
 {
-    internal class Themkhachhang
+    public class Themkhachhang
     {
         static void Main(string[] args)
         {

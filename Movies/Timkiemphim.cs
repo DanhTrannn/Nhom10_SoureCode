@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Movies
 {
-    internal class Timkiemphim
+    public class Timkiemphim
     {
     }
 }

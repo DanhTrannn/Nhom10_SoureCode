@@ -1,0 +1,2 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache

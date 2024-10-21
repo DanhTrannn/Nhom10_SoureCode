@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Movies
 {
-    internal class Suathongtinphim
+    public class Suathongtinphim
     {
     }
 }

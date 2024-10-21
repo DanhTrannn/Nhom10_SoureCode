@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Movies
 {
-    internal class Xoaphim
+    public class Xoaphim
     {
     }
 }

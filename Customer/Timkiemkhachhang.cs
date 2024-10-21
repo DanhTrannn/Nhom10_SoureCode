@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Customer
 {
-    internal class Timkiemkhachhang
+    public class Timkiemkhachhang
     {
     }
 }

@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Showtime
 {
-    internal class Xoalichchieu
+    public class Xoalichchieu
     {
     }
 }

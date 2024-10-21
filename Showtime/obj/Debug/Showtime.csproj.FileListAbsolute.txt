@@ -1,0 +1,2 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.csproj.CoreCompileInputs.cache

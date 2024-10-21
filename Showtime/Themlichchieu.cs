@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Showtime
 {
-    internal class Themlichchieu
+    public class Themlichchieu
     {
         static void Main(string[] args)
         {

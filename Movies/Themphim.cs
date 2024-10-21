@@ -7,7 +7,7 @@ using Database;
 using DataStructure;
 namespace Movies
 {
-    internal class Themphim
+    public class Themphim
     {
         static void Main(string[] args)
         {

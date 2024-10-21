@@ -49,5 +49,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Customer\Customer.csproj">
+      <Project>{1f46d61b-4b3e-4ce3-acab-6c86aa75e0a4}</Project>
+      <Name>Customer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{3fe94d95-b151-46c4-aa61-2779d3d0a282}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataStructure\DataStructure.csproj">
+      <Project>{17f33017-5bdc-491f-af89-47e0cbb27459}</Project>
+      <Name>DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movies\Movies.csproj">
+      <Project>{875991fd-f68d-412a-8f12-c646bcccf821}</Project>
+      <Name>Movies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Showtime\Showtime.csproj">
+      <Project>{2cc6e4fa-2e50-4c39-806d-f5fdac94debc}</Project>
+      <Name>Showtime</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
