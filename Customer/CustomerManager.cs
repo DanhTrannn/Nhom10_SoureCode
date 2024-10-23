@@ -9,6 +9,10 @@ namespace Customer
 {
     public class CustomerManager
     {
-
+        private datastructure _data;
+        public CustomerManager(datastructure data)
+        {
+            this._data = data;
+        }
     }
 }

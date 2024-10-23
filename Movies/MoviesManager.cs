@@ -9,5 +9,10 @@ namespace Movies
 {
     public class MoviesManager
     {
+        private datastructure _data;
+        public MoviesManager(datastructure data)
+        {
+            this._data = data;
+        }
     }
 }

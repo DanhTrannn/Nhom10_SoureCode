@@ -1,0 +1,2 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\CustomerManager.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\CustomerManager.csproj.CoreCompileInputs.cache

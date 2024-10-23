@@ -9,5 +9,11 @@ namespace Showtime
 {
     public class ShowtimeManager
     {
+        private datastructure _data;
+        public ShowtimeManager(datastructure data)
+        {
+            this._data = data;
+        }
+
     }
 }

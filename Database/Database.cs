@@ -9,7 +9,7 @@ using DataStructure;
 using System.Threading;
 namespace Database
 {
-    public class Database
+    public class database
     {
         public string customerFilePath = "Customer.txt";
         public string movieFilePath = "Movies.txt";

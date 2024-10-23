@@ -14,7 +14,17 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            
+            datastructure data = new datastructure();
+            database db = new database();
+            db.loadCustomerData(data);
+            db.loadMovieData(data);
+            db.loadShowtimeData(data);
+
+            CustomerManager customerManager = new CustomerManager(data);
+            MoviesManager moviesManager = new MoviesManager(data);
+            ShowtimeManager showtimeManager = new ShowtimeManager(data);
+
+
         }
     }
 }
