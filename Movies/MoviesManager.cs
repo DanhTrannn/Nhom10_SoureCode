@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using DataStructure;
-namespace Showtime
+namespace Movies
 {
-    public class Program
+    public class MoviesManager
     {
     }
 }

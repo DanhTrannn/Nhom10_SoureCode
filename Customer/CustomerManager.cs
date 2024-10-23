@@ -7,7 +7,8 @@ using Database;
 using DataStructure;
 namespace Customer
 {
-    public class Xoakhachhang
+    public class CustomerManager
     {
+
     }
 }
