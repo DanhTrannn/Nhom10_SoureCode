@@ -5,13 +5,13 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main.csproj", "{8E49DD99-05C9-41CE-8CD8-850401AA31D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "..\Customer\Customer.csproj", "{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManager", "..\Customer\CustomerManager.csproj", "{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure", "..\DataStructure\DataStructure.csproj", "{17F33017-5BDC-491F-AF89-47E0CBB27459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies", "..\Movies\Movies.csproj", "{875991FD-F68D-412A-8F12-C646BCCCF821}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesManager", "..\Movies\MoviesManager.csproj", "{875991FD-F68D-412A-8F12-C646BCCCF821}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showtime", "..\Showtime\Showtime.csproj", "{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowtimeManager", "..\Showtime\ShowtimeManager.csproj", "{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\Database\Database.csproj", "{3FE94D95-B151-46C4-AA61-2779D3D0A282}"
 EndProject

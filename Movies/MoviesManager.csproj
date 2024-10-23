@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hienthidanhsachphim.cs" />
-    <Compile Include="Suathongtinphim.cs" />
-    <Compile Include="Themphim.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timkiemphim.cs" />
-    <Compile Include="Xoaphim.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

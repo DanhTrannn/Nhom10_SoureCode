@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}</ProjectGuid>
+    <ProjectGuid>{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Customer</RootNamespace>
-    <AssemblyName>Customer</AssemblyName>
+    <RootNamespace>Showtime</RootNamespace>
+    <AssemblyName>Showtime</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hienthidanhsachkhachhang.cs" />
-    <Compile Include="Suathongtinkhachhang.cs" />
-    <Compile Include="Themkhachhang.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timkiemkhachhang.cs" />
-    <Compile Include="Xoakhachhang.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

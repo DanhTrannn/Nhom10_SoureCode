@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}</ProjectGuid>
+    <ProjectGuid>{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Showtime</RootNamespace>
-    <AssemblyName>Showtime</AssemblyName>
+    <RootNamespace>Customer</RootNamespace>
+    <AssemblyName>Customer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hienthilichchieu.cs" />
-    <Compile Include="Themlichchieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Xoalichchieu.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
