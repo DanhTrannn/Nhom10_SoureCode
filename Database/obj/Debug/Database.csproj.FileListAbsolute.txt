@@ -1,2 +1,11 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\Database.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\Database.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\Database.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\DataStructure.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\bin\Debug\DataStructure.dll.config
 C:\Users\PC\Desktop\Nhom10_SourceCode\Database\obj\Debug\Database.csproj.AssemblyReference.cache
 C:\Users\PC\Desktop\Nhom10_SourceCode\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\obj\Debug\Database.csproj.Up2Date
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\obj\Debug\Database.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Database\obj\Debug\Database.pdb

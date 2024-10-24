@@ -1,2 +1,7 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\bin\Debug\DataStructure.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\bin\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\bin\Debug\DataStructure.pdb
 C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.csproj.AssemblyReference.cache
 C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.pdb

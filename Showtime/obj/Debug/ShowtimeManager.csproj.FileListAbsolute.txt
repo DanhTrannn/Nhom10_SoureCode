@@ -1,2 +1,14 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Showtime.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Showtime.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Showtime.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Database.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Database.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\Database.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\DataStructure.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\bin\Debug\DataStructure.dll.config
 C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\ShowtimeManager.csproj.AssemblyReference.cache
 C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\ShowtimeManager.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.77F590F2.Up2Date
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.pdb

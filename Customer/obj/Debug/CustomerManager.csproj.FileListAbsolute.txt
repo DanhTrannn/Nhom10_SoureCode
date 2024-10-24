@@ -1,2 +1,14 @@
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Customer.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Customer.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Customer.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Database.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Database.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\Database.dll.config
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\DataStructure.pdb
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\bin\Debug\DataStructure.dll.config
 C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\CustomerManager.csproj.AssemblyReference.cache
 C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\CustomerManager.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\Customer.3544765E.Up2Date
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\Customer.dll
+C:\Users\PC\Desktop\Nhom10_SourceCode\Customer\obj\Debug\Customer.pdb
