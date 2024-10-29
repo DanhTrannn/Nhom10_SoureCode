@@ -14,14 +14,14 @@ namespace DataStructure
         private string name;
         private string email;
         private string phoneNumber;
-        private string cccd;
-        public customer(string id, string name, string email, string phoneNumber, string cccd)
+        private string personalCode;
+        public customer(string id, string name, string email, string phoneNumber, string personalCode)
         {
             this.id = id;
             this.name = name;
             this.email = email;
             this.phoneNumber = phoneNumber;
-            this.cccd = cccd;
+            this.personalCode = personalCode;
         }
         public void setID(string id)
         {
@@ -55,13 +55,13 @@ namespace DataStructure
         {
             return this.phoneNumber;
         }
-        public void setCCCD(string cccd)
+        public void setPersonalCode(string personalCode)
         {
-            this.cccd = cccd;
+            this.personalCode = personalCode;
         }
-        public string getCCCD()
+        public string getPersonalCode()
         {
-            return this.cccd;
+            return this.personalCode;
         }
     }
 

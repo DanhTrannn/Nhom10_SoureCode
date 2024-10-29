@@ -29,7 +29,7 @@ namespace Database
                         tmp.setName(parts[1]);
                         tmp.setEmail(parts[2]);
                         tmp.setPhoneNumber(parts[3]);
-                        tmp.setCCCD(parts[4]);
+                        tmp.setPersonalCode(parts[4]);
                         data.Customers.Add(tmp);
                     }
                 }
@@ -83,7 +83,7 @@ namespace Database
             {
                 foreach (var customer in data.Customers)
                 {
-                    writer.WriteLine($"{customer.getId()},{customer.getName()},{customer.getEmail()},{customer.getPhoneNumber()},{customer.getCCCD()}");
+                    writer.WriteLine($"{customer.getId()},{customer.getName()},{customer.getEmail()},{customer.getPhoneNumber()},{customer.getPersonalCode()}");
                 }
             }
         }
