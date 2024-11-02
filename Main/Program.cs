@@ -8,6 +8,7 @@ using Database;
 using Customer;
 using Movies;
 using Showtime;
+using System.Security.Cryptography;
 namespace Main
 {
     public class Program
@@ -23,8 +24,6 @@ namespace Main
             CustomerManager customerManager = new CustomerManager(data);
             MoviesManager moviesManager = new MoviesManager(data);
             ShowtimeManager showtimeManager = new ShowtimeManager(data);
-
-
         }
     }
 }

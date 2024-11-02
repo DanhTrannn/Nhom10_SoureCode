@@ -34,6 +34,10 @@ namespace Database
                     }
                 }
             }
+            else
+            {
+                Console.WriteLine("File not found: " + customerFilePath);
+            }
         }
 
         public void loadMovieData(datastructure data)
@@ -53,7 +57,10 @@ namespace Database
                         data.Movies.Add(tmp);
                     }
                 }
-
+            }
+            else
+            {
+                Console.WriteLine("File not found: " + movieFilePath);
             }
         }
 
@@ -75,6 +82,10 @@ namespace Database
                     }
                 }
 
+            }
+            else
+            {
+                Console.WriteLine("File not found: " + showTimeFilePath);
             }
         }
         public void saveCustomerData(datastructure data)
