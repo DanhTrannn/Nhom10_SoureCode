@@ -24,19 +24,19 @@ namespace Database
                     var parts = line.Split(',');
                     if (parts.Length == 5)
                     {
-                        customer tmp = new customer();
-                        tmp.setID(parts[0]);
-                        tmp.setName(parts[1]);
-                        tmp.setEmail(parts[2]);
-                        tmp.setPhoneNumber(parts[3]);
-                        tmp.setPersonalCode(parts[4]);
+                        Customer tmp = new Customer();
+                        tmp.id = (parts[0]);
+                        tmp.name = (parts[1]);
+                        tmp.email = (parts[2]);
+                        tmp.phoneNumber = (parts[3]);
+                        tmp.personalCode = (parts[4]);
                         data.Customers.Add(tmp);
                     }
                 }
             }
             else
             {
-                Console.WriteLine("File not found: " + customerFilePath);
+                Console.WriteLine("Không tồn tại file: " + customerFilePath);
             }
         }
 
@@ -49,18 +49,18 @@ namespace Database
                     var parts = line.Split(',');
                     if(parts.Length == 4)
                     {
-                        movies tmp = new movies();
-                        tmp.setMovieID(parts[0]);
-                        tmp.setMovieName(parts[1]);
-                        tmp.setGenre(parts[2]);
-                        tmp.setDuration(parts[3]);
+                        Movies tmp = new Movies();
+                        tmp.movieID = (parts[0]);
+                        tmp.movieName = (parts[1]);
+                        tmp.genre = (parts[2]);
+                        tmp.duration = (parts[3]);
                         data.Movies.Add(tmp);
                     }
                 }
             }
             else
             {
-                Console.WriteLine("File not found: " + movieFilePath);
+                Console.WriteLine("Không tồn tại file: " + movieFilePath);
             }
         }
 
@@ -74,10 +74,10 @@ namespace Database
                     var parts = line.Split(',');
                     if (parts.Length == 3)
                     {
-                        showtime tmp = new showtime();
-                        tmp.setMovieID(parts[0]);
-                        tmp.setShow(parts[1]);
-                        tmp.setHall(parts[2]);
+                        ShowTime tmp = new ShowTime();
+                        tmp.movieID = parts[0];
+                        tmp.showDateTime = (DateTime.Parse(parts[1]));
+                        tmp.hall = (parts[2]);
                         data.Showtimes.Add(tmp);
                     }
                 }
@@ -85,7 +85,7 @@ namespace Database
             }
             else
             {
-                Console.WriteLine("File not found: " + showTimeFilePath);
+                Console.WriteLine("Không tồn tại file: " + showTimeFilePath);
             }
         }
         public void saveCustomerData(datastructure data)
@@ -94,7 +94,7 @@ namespace Database
             {
                 foreach (var customer in data.Customers)
                 {
-                    writer.WriteLine($"{customer.getId()},{customer.getName()},{customer.getEmail()},{customer.getPhoneNumber()},{customer.getPersonalCode()}");
+                    writer.WriteLine($"{customer.id},{customer.name},{customer.email},{customer.phoneNumber},{customer.personalCode}");
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace Database
             {
                 foreach (var movie in data.Movies)
                 {
-                    writer.WriteLine($"{movie.getMovieID()},{movie.getMovieName()},{movie.getGenre()},{movie.getDuration()}");
+                    writer.WriteLine($"{movie.movieID},{movie.movieName},{movie.genre},{movie.duration}");
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace Database
             {
                 foreach (var showtime in data.Showtimes)
                 {
-                    writer.WriteLine($"{showtime.getMovieID()},{showtime.getShow()},{showtime.getHall()}");
+                    writer.WriteLine($"{showtime.movieID},{showtime.showDateTime},{showtime.hall}");
                 }
             }
         }

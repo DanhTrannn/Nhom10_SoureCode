@@ -23,8 +23,7 @@ namespace Main
 
             CustomerManager customerManager = new CustomerManager(data);
             MoviesManager moviesManager = new MoviesManager(data);
-            ShowtimeManager showtimeManager = new ShowtimeManager(data);
-            //test
+            ShowTimeManager showtimeManager = new ShowTimeManager(data);
         }
     }
 }
