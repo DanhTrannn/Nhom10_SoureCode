@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using datastructure;
 using database;
-using Customer;
+using CustomersManager;
 using MoviesManager;
 using ShowtimeManager;
 using System.Security.Cryptography;
