@@ -58,9 +58,9 @@ namespace CustomersManager
                 Console.WriteLine("Khong tim thay khach hang co ID " + updateCustomer.id);
             }
         }
-        public void FindCustomer(Customer find) 
+        public void FindCustomer(string data) 
         {
-            Customer res = _data.Customers.Find(c => c.id == find.id);
+            Customer res = _data.Customers.Find(c => c.phoneNumber == data);
             if (!res.Equals(default(Customer)))
             {
                 Console.WriteLine("Da tim thay khach hang!");
