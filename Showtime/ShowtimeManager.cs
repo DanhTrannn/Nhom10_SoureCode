@@ -22,6 +22,7 @@ namespace ShowtimeManager
         public void AddShowTime(ShowTime newShowtime)
         {
             _data.Showtimes.AddLast(newShowtime);
+            Console.WriteLine("Add showtime success!");
             db.saveShowtimeData(_data);
         }
 
@@ -31,12 +32,12 @@ namespace ShowtimeManager
             if (!DeleteShowTime.Equals(null))
             {
                 _data.Showtimes.Remove(s => s.movieID == data);
-                Console.WriteLine("Lich chieu da duoc xoa thanh cong");
+                Console.WriteLine("Show time is removed success!");
                 db.saveShowtimeData(_data);
             }
             else
             {
-                Console.WriteLine("Khong tim thay lich chieu co ID" + data);
+                Console.WriteLine("Show time ID is not found!" + data);
             }
         }
 
@@ -45,12 +46,12 @@ namespace ShowtimeManager
             bool updated = _data.Showtimes.Update(s => s.movieID == newShowtime.movieID, newShowtime);
             if (updated)
             {
-                Console.WriteLine("Lich chieu da duoc cap nhat thanh cong!");
+                Console.WriteLine("Showtime is updated!");
                 db.saveShowtimeData(_data);
             }
             else
             {
-                Console.WriteLine("Khong tim thay lich chieu co ID " + newShowtime.movieID);
+                Console.WriteLine("Showtime " + newShowtime.movieID + " is not found!");
             }
         }
 

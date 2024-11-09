@@ -20,14 +20,14 @@ namespace CustomersManager
         public void AddCustomer(Customer customer)
         {
             _data.Customers.AddLast(customer);
-            Console.WriteLine("Da them khach hang thanh cong");
+            Console.WriteLine("Customer is successfully added!");
             db.saveCustomerData(_data);
         }
         public void RemoveCustomer(string Id)
         {
             if (_data.Customers.size == 0)
             {
-                Console.WriteLine("Danh sach khach hang rong, khong the xoa!");
+                Console.WriteLine("Customer list is empty, can't remove!!");
                 return;
             }
             else
@@ -36,12 +36,12 @@ namespace CustomersManager
                 if (!delCustomer.Equals(default(Customer)))
                 {
                     _data.Customers.Remove(c => c.id == Id);
-                    Console.WriteLine("Da xoa khach hang!");
+                    Console.WriteLine("Customer is successfully deleted!");
                     db.saveCustomerData(_data);
                 }
                 else
                 {
-                    Console.WriteLine("Khong tim thay khach hang co ID: "+Id);
+                    Console.WriteLine("Can found customer: "+ Id + " !");
                 }
             }
         }
@@ -50,12 +50,12 @@ namespace CustomersManager
             bool update = _data.Customers.Update(c => c.id == updateCustomer.id, updateCustomer);
             if (update)
             {
-                Console.WriteLine("Khach hang da duoc cap nhat thanh cong!");
+                Console.WriteLine("Customer is successfully updated!");
                 db.saveCustomerData(_data);
             }
             else
             {
-                Console.WriteLine("Khong tim thay khach hang co ID " + updateCustomer.id);
+                Console.WriteLine("Customer " + updateCustomer.id + " is not found!");
             }
         }
         public void FindCustomer(string data) 
@@ -63,12 +63,12 @@ namespace CustomersManager
             Customer res = _data.Customers.Find(c => c.phoneNumber == data);
             if (!res.Equals(default(Customer)))
             {
-                Console.WriteLine("Da tim thay khach hang!");
+                Console.WriteLine("Customer is found!");
                 res.ToString();
             }
             else
             {
-                Console.WriteLine("Khong tim thay khach hang!");
+                Console.WriteLine("Can not find customer!");
             }
         }
         public void DisplayCustomer()

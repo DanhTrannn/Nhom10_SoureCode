@@ -7,6 +7,7 @@ using database;
 using datastructure;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
+using System.Runtime.InteropServices;
 
 namespace MoviesManager
 {
@@ -23,14 +24,14 @@ namespace MoviesManager
         public void AddMovie(Movies movie)
         {
             _data.Movies.AddLast(movie);
-            Console.WriteLine("Phim da duoc them thanh cong");
+            Console.WriteLine("Add movie success!");
             db.saveMovieData(_data);
         }
         public void RemoveMovie(string id)
         {
             if (_data.Movies.size == 0)
             {
-                Console.WriteLine("Danh sách phim rỗng, không thể xóa.");
+                Console.WriteLine("Movie list is empty, can't remove");
                 return;
             }
 
@@ -42,12 +43,12 @@ namespace MoviesManager
             {
                 // Xóa phim khỏi danh sách
                 _data.Movies.Remove(m => m.movieID == id);
-                Console.WriteLine("Phim da duoc xoa thanh cong!");
+                Console.WriteLine("Movie is successfully deleted!");
                 db.saveMovieData(_data);
             }
             else
             {
-                Console.WriteLine("Khong tim thay phim co ID: " + id);
+                Console.WriteLine("Movie " + id + " is not found!");
             }
         }
 
@@ -56,17 +57,30 @@ namespace MoviesManager
             bool updated = _data.Movies.Update(m => m.movieID == updatedMovie.movieID, updatedMovie);
             if (updated)
             {
-                Console.WriteLine("Phim da duoc cap nhat thanh cong!");
+                Console.WriteLine("Movie is successfully updated!");
                 db.saveMovieData(_data);
             }
             else
             {
-                Console.WriteLine("Khong tim thay phim co " + updatedMovie.movieID);
+                Console.WriteLine("Movie " + updatedMovie.movieID + " is not found!");
             }
         }
         public void DisplayMovie()
         {
             _data.Movies.Display();
+        }
+        public void FindMovie(string name)
+        {
+            Movies movieToFind = _data.Movies.Find(n => n.movieName == name);
+            if (!movieToFind.Equals(default(Movies)))
+            {
+                Console.WriteLine("Movie has found!");
+                Console.WriteLine(movieToFind);
+            }
+            else
+            {
+                Console.WriteLine("Movie is not found!");
+            }
         }
     }
 }
