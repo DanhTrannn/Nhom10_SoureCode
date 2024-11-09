@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.AccessControl;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace datastructure
 {
     // Linked List build tay
+
     public struct Customer
     {
         public string id;
@@ -24,6 +26,7 @@ namespace datastructure
             this.phoneNumber = phoneNumber;
             this.personalCode = personalCode;
         }
+        public override string ToString() => $"Customer: {id}, {name}, {email}, {phoneNumber}, {personalCode}";
     }
 
 
@@ -41,7 +44,7 @@ namespace datastructure
             this.genre = genre;
             this.duration = duration;
         }
-
+        public override string ToString() => $"Movie: {movieID}, {movieName}, {genre}, {duration}";
     }
 
 
@@ -57,11 +60,115 @@ namespace datastructure
             this.showDateTime = showDateTime;
             this.hall = hall;
         }
+        public override string ToString() => $"ShowTime: {movieID}, {showDateTime}, {hall}";
+    }
+    public class Node<T>
+    {
+        public T data;
+        public Node<T> next;
+        public Node(T data)
+        {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public class  linkedlist<T>
+    {
+        public Node<T> head;
+        public int size;
+        public linkedlist()
+        {
+            head = null;
+            size = 0;
+        }
+
+        public bool isEmpty()
+        {
+            return size == 0;
+        }
+        public void AddLast(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node<T> current = head;
+                while (current.next != null)
+                {
+                    current = current.next;
+                }
+                current.next = newNode;
+            }
+            size++;
+        }
+        public void Remove(Predicate<T> match)
+        {
+            if (head == null) return;
+
+            // Nếu nút đầu tiên thỏa mãn điều kiện
+            if (match(head.data))
+            {
+                head = head.next;
+                size--;
+                return;
+            }
+
+            Node<T> current = head;
+
+            while (current.next != null && !match(current.next.data))
+            {
+                current = current.next;
+            }
+
+            if (current.next != null) // Kiểm tra nếu có nút cần xóa
+            {
+                current.next = current.next.next;
+                size--;
+            }
+        }
+        public T Find(Predicate<T> match)
+        {
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (match(current.data))
+                    return current.data; // Trả về phần tử nếu thỏa mãn điều kiện
+                current = current.next;
+            }
+            return default(T); // Trả về giá trị mặc định nếu không tìm thấy
+        }
+        public bool Update(Predicate<T> match, T newData)
+        {
+            Node<T> current = head;
+            while(current != null)
+            {
+                if (match(current.data))
+                {
+                    current.data = newData;
+                    return true;    
+                }
+                current = current.next;
+            }
+            return false;
+        }
+        public void Display()
+        {
+            Node<T> tmp = head;
+            while (tmp != null)
+            {
+                Console.WriteLine(tmp.data);
+                tmp = tmp.next;
+            }
+            Console.WriteLine();
+        }
     }
     public class DataStructure
     {
-        public LinkedList<Customer> Customers = new LinkedList<Customer>();
-        public LinkedList<Movies> Movies = new LinkedList<Movies>();
-        public LinkedList<ShowTime> Showtimes = new LinkedList<ShowTime>();
+        public linkedlist<Customer> Customers = new linkedlist<Customer>();
+        public linkedlist<Movies> Movies = new linkedlist<Movies>();
+        public linkedlist<ShowTime> Showtimes = new linkedlist<ShowTime>();
     }
 }

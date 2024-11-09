@@ -23,28 +23,50 @@ namespace MoviesManager
         public void AddMovie(Movies movie)
         {
             _data.Movies.AddLast(movie);
-            Console.WriteLine("Phim đã được thêm thành công.");
+            Console.WriteLine("Phim da duoc them thanh cong");
+            db.saveMovieData(_data);
         }
         public void RemoveMovie(string id)
         {
-            var node = _data.Movies.First;
-            while (node != null)
+            if (_data.Movies.size == 0)
             {
-                if (node.Value.movieID == id)
-                {
-                    _data.Movies.Remove(node);
-                    Console.WriteLine("Phim đã được xóa thành công.");
-                    db.saveMovieData(_data);
-                    return;
-                }
-                node = node.Next;
+                Console.WriteLine("Danh sách phim rỗng, không thể xóa.");
+                return;
             }
-            Console.WriteLine("Không tìm thấy phim với ID đã cho.");
+
+            // Tìm phim cần xóa
+            Movies deleteMovie = _data.Movies.Find(m => m.movieID == id);
+
+            // Kiểm tra nếu phim tồn tại
+            if (!deleteMovie.Equals(default(Movies)))
+            {
+                // Xóa phim khỏi danh sách
+                _data.Movies.Remove(m => m.movieID == id);
+                Console.WriteLine("Phim da duoc xoa thanh cong!");
+                db.saveMovieData(_data);
+            }
+            else
+            {
+                Console.WriteLine("Khong tim thay phim co ID: " + id);
+            }
         }
 
         public void UpdateMovie(Movies updatedMovie)
         {
-
+            bool updated = _data.Movies.Update(m => m.movieID == updatedMovie.movieID, updatedMovie);
+            if (updated)
+            {
+                Console.WriteLine("Phim da duoc cap nhat thanh cong!");
+                db.saveMovieData(_data);
+            }
+            else
+            {
+                Console.WriteLine("Khong tim thay phim co " + updatedMovie.movieID);
+            }
+        }
+        public void DisplayMovie()
+        {
+            _data.Movies.Display();
         }
     }
 }

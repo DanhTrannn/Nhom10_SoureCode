@@ -12,3 +12,10 @@ D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.Assemb
 D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
 D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.dll
 D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.pdb
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.dll.config
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.pdb
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.dll
+C:\Users\PC\Desktop\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.pdb

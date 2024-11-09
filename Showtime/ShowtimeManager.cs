@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using database;
 using datastructure;
-namespace Showtime
+namespace ShowtimeManager
 {
     public class ShowTimeManager
     {
@@ -19,99 +19,44 @@ namespace Showtime
         }
 
 
-        public void AddShowTime(string movieId, DateTime showDateTime, string hall)
+        public void AddShowTime(ShowTime newShowtime)
         {
-            try
+            _data.Showtimes.AddLast(newShowtime);
+            db.saveShowtimeData(_data);
+        }
+
+        public void RemoveShowTime(string data)
+        {
+            ShowTime DeleteShowTime = _data.Showtimes.Find(s => s.movieID == data);
+            if (!DeleteShowTime.Equals(null))
             {
-                ShowTime newShowTime = new ShowTime(movieId, showDateTime, hall);
-                _data.Showtimes.AddLast(newShowTime);
-                Console.WriteLine("Lịch chiếu đã được thêm thành công.");
+                _data.Showtimes.Remove(s => s.movieID == data);
+                Console.WriteLine("Lich chieu da duoc xoa thanh cong");
                 db.saveShowtimeData(_data);
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine($"Lỗi khi thêm lịch chiếu: {ex.Message}");
+                Console.WriteLine("Khong tim thay lich chieu co ID" + data);
             }
         }
 
-
-        public void RemoveShowTime(string MovieId)
+        public void UpdateShowTime(ShowTime newShowtime)
         {
-            // Kiểm tra nếu dslk của Showtimes rỗng thì báo lỗi
-            if (_data.Showtimes.Count == 0 || !_data.Showtimes.Any())
+            bool updated = _data.Showtimes.Update(s => s.movieID == newShowtime.movieID, newShowtime);
+            if (updated)
             {
-                Console.WriteLine("Danh sách lịch chiếu rỗng, không thể xóa.");
-                return;
+                Console.WriteLine("Lich chieu da duoc cap nhat thanh cong!");
+                db.saveShowtimeData(_data);
             }
-            // Ngược lại, duyệt qua dslk Showtimes và tìm phần tử có MovieId cần xoá
-            try
+            else
             {
-                var node = _data.Showtimes.First;
-                while (node != null)
-                {
-                    if (node.Value.movieID == MovieId)
-                    {
-                        _data.Showtimes.Remove(node);
-                        Console.WriteLine("Lịch chiếu đã được xóa thành công.");
-                        db.saveShowtimeData(_data);
-                        return;
-                    }
-                    node = node.Next;
-                }
-                Console.WriteLine("Lịch chiếu không tồn tại.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Lỗi khi xóa lịch chiếu: {ex.Message}");
+                Console.WriteLine("Khong tim thay lich chieu co ID " + newShowtime.movieID);
             }
         }
 
-
-        public ShowTime? SearchShowTime(string MovieId)
+        public void DisplayShowTime()
         {
-            // ShowTime? co nghia la no co the chap nhan null (nullable)
-            try
-            {
-                var node = _data.Showtimes.First;
-                while (node != null)
-                {
-                    if (node.Value.movieID == MovieId)
-                    {
-                        return node.Value;
-                    }
-                    node = node.Next;
-                }
-                Console.WriteLine("Lịch chiếu không tồn tại.");
-                return null;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Lỗi khi tìm kiếm lịch chiếu: {ex.Message}");
-                return null;
-            }
-        }
-
-
-        public void DisplayShowTimes()
-        {
-            try
-            {
-                if (_data.Showtimes.Count == 0)
-                {
-                    Console.WriteLine("Không có lịch chiếu nào.");
-                    return;
-                }
-
-                Console.WriteLine("Danh sách lịch chiếu:");
-                foreach (var showTime in _data.Showtimes)
-                {
-                    Console.WriteLine($"Movie ID: {showTime.movieID}, Thời gian: {showTime.showDateTime}, Sảnh: {showTime.hall}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Lỗi khi hiển thị lịch chiếu: {ex.Message}");
-            }
+            _data.Showtimes.Display();
         }
     }
 }

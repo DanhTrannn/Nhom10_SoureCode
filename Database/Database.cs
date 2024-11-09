@@ -95,35 +95,43 @@ namespace database
                 Console.WriteLine("Không tồn tại file: " + showTimeFilePath);
             }
         }
+
         public void saveCustomerData(DataStructure data)
         {
             using (var writer = new StreamWriter(customerFilePath))
             {
-                foreach (var customer in data.Customers)
+                Node<Customer> current = data.Customers.head;
+                while (current != null)
                 {
+                    Customer customer = current.data;
                     writer.WriteLine($"{customer.id},{customer.name},{customer.email},{customer.phoneNumber},{customer.personalCode}");
+                    current = current.next;
                 }
             }
         }
-
         public void saveMovieData(DataStructure data)
         {
             using (var writer = new StreamWriter(movieFilePath))
             {
-                foreach (var movie in data.Movies)
+                Node<Movies> current = data.Movies.head;
+                while (current != null)
                 {
+                    Movies movie = current.data;
                     writer.WriteLine($"{movie.movieID},{movie.movieName},{movie.genre},{movie.duration}");
+                    current = current.next;
                 }
             }
         }
-
         public void saveShowtimeData(DataStructure data)
         {
             using (var writer = new StreamWriter(showTimeFilePath))
             {
-                foreach (var showtime in data.Showtimes)
+                Node<ShowTime> current = data.Showtimes.head;
+                while (current != null)
                 {
+                    ShowTime showtime = current.data;
                     writer.WriteLine($"{showtime.movieID},{showtime.showDateTime},{showtime.hall}");
+                    current = current.next;
                 }
             }
         }

@@ -7,7 +7,7 @@ using datastructure;
 using database;
 using Customer;
 using MoviesManager;
-using Showtime;
+using ShowtimeManager;
 using System.Security.Cryptography;
 namespace Main
 {
@@ -24,14 +24,6 @@ namespace Main
             CustomerManager customerManager = new CustomerManager(data);
             MovieManager moviesManager = new MovieManager(data);
             ShowTimeManager showtimeManager = new ShowTimeManager(data);
-
-            //    Movies newMovie = new Movies("100","Doramon","Hoathinh","2h");
-            //    Movies newMovie2 = new Movies("123","HelloKitty","hoathinh","10h");
-            //    moviesManager.AddMovie(newMovie);
-            //    moviesManager.UpdateMovie(newMovie2);
-            //    moviesManager.RemoveMovie("100");
-            //    Console.ReadKey();
-
         }
     }
 }
