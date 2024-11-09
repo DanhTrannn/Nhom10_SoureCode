@@ -6,8 +6,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructure
+namespace datastructure
 {
+    // Linked List build tay
     public struct Customer
     {
         public string id;
@@ -57,10 +58,10 @@ namespace DataStructure
             this.hall = hall;
         }
     }
-    public class datastructure
+    public class DataStructure
     {
-        public List<Customer> Customers = new List<Customer>();
-        public List<Movies> Movies = new List<Movies>();
-        public List<ShowTime> Showtimes = new List<ShowTime>();
+        public LinkedList<Customer> Customers = new LinkedList<Customer>();
+        public LinkedList<Movies> Movies = new LinkedList<Movies>();
+        public LinkedList<ShowTime> Showtimes = new LinkedList<ShowTime>();
     }
 }

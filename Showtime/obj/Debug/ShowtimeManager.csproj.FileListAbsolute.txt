@@ -12,3 +12,17 @@ C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\ShowtimeManager.csproj.
 C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.77F590F2.Up2Date
 C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.dll
 C:\Users\PC\Desktop\Nhom10_SourceCode\Showtime\obj\Debug\Showtime.pdb
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Showtime.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Showtime.dll
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Showtime.pdb
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Database.dll
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\DataStructure.dll
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Database.pdb
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\Database.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\DataStructure.pdb
+D:\Code\DSA\Nhom10_SoureCode\Showtime\bin\Debug\DataStructure.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Showtime\obj\Debug\ShowtimeManager.csproj.AssemblyReference.cache
+D:\Code\DSA\Nhom10_SoureCode\Showtime\obj\Debug\ShowtimeManager.csproj.CoreCompileInputs.cache
+D:\Code\DSA\Nhom10_SoureCode\Showtime\obj\Debug\Showtime.77F590F2.Up2Date
+D:\Code\DSA\Nhom10_SoureCode\Showtime\obj\Debug\Showtime.dll
+D:\Code\DSA\Nhom10_SoureCode\Showtime\obj\Debug\Showtime.pdb

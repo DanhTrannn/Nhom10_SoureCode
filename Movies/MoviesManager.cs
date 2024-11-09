@@ -3,67 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Database;
-using DataStructure;
+using database;
+using datastructure;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
 
-public class MovieManager
+namespace MoviesManager
 {
-    private DataStructure _data;
-
-    public MovieManager(DataStructure data)
+    public class MovieManager
     {
-        _data = data;
-    }
-
-    public void AddMovie(Movie movie) => _data.Movies.Add(movie);
-    public void RemoveMovie(string id) => _data.Movies.RemoveAll(m => m.Id == id);
-    public void UpdateMovie(Movie updatedMovie)
-    {
-        for (int i = 0; i < _data.Movies.Count; i++)
+        private DataStructure _data;
+        private DataBase db;
+        public MovieManager(DataStructure data)
         {
-            if (_data.Movies[i].Id == updatedMovie.Id)
-            {
-                _data.Movies[i] = updatedMovie;
-                break;
-            }
+            _data = data;
+            db = new DataBase();
         }
-    }
 
-    public void SaveMovies()
-    {
-        using (var writer = new StreamWriter(Database.movieFilePath))
+        public void AddMovie(Movies movie)
         {
-            foreach (var movie in _data.Movies)
-            {
-                writer.WriteLine($"{movie.Id},{movie.Title},{movie.Genre},{movie.Duration}");
-            }
+            _data.Movies.AddLast(movie);
+            Console.WriteLine("Phim đã được thêm thành công.");
         }
-    }
-
-    public void LoadMovies()
-    {
-        if (File.Exists(Database.movieFilePath))
+        public void RemoveMovie(string id)
         {
-            using (var reader = new Streamer(Databse.movieFilePath))
+            var node = _data.Movies.First;
+            while (node != null)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                if (node.Value.movieID == id)
                 {
-                    var parts = line.Split(',');
-                    if (parts.Length == 4)
-                    {
-                        var movie = new Movie(parts[0], parts[1], parts[2], parts[3]);
-                        _data.Movies.Add(movie);
-                    }
+                    _data.Movies.Remove(node);
+                    Console.WriteLine("Phim đã được xóa thành công.");
+                    db.saveMovieData(_data);
+                    return;
                 }
+                node = node.Next;
             }
+            Console.WriteLine("Không tìm thấy phim với ID đã cho.");
+        }
+
+        public void UpdateMovie(Movies updatedMovie)
+        {
+
         }
     }
 }
 
-public static class Database
-{
-    public static string movieFilePath = "movíes.txt";
-}

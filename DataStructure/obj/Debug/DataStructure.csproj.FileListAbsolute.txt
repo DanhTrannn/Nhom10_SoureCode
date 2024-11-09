@@ -5,3 +5,10 @@ C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.cspr
 C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.dll
 C:\Users\PC\Desktop\Nhom10_SourceCode\DataStructure\obj\Debug\DataStructure.pdb
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.dll.config
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.dll
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\bin\Debug\DataStructure.pdb
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.AssemblyReference.cache
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.dll
+D:\Code\DSA\Nhom10_SoureCode\DataStructure\obj\Debug\DataStructure.pdb

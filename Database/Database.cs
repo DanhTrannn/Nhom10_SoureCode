@@ -5,23 +5,29 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using DataStructure;
+using datastructure;
 using System.Threading;
-namespace Database
+namespace database
 {
-    public class database
+    public class DataBase
     {
         public string customerFilePath = "Customer.txt";
         public string movieFilePath = "Movies.txt";
         public string showTimeFilePath = "Showtime.txt";
-        public void loadCustomerData(datastructure data)
+        public void loadCustomerData(DataStructure data)
         {
+            // Kiểm tra file có tồn tại không?
             if (File.Exists(customerFilePath))
             {
+                // Mở file và trả về mảng lines chứa các dòng dữ liệu
                 var lines = File.ReadAllLines(customerFilePath);
+                // Duyệt qua tất cả các dòng dữ liệu
                 foreach (var line in lines)
                 {
+                    // Tách dữ liệu trên 1 dòng thông qua các dấu phẩy và trả về mảng parts
                     var parts = line.Split(',');
+                    // Kiểm tra xem nếu 1 dòng có đủ 5 phần dữ liệu thì tạo một đối tượng Customer mới
+                    // Sau đó thêm vào d
                     if (parts.Length == 5)
                     {
                         Customer tmp = new Customer();
@@ -30,7 +36,7 @@ namespace Database
                         tmp.email = (parts[2]);
                         tmp.phoneNumber = (parts[3]);
                         tmp.personalCode = (parts[4]);
-                        data.Customers.Add(tmp);
+                        data.Customers.AddLast(tmp);
                     }
                 }
             }
@@ -40,21 +46,22 @@ namespace Database
             }
         }
 
-        public void loadMovieData(datastructure data)
+        public void loadMovieData(DataStructure data)
         {
-            if(File.Exists(movieFilePath))
+            if (File.Exists(movieFilePath))
             {
                 var lines = File.ReadAllLines(movieFilePath);
-                foreach(var line in lines){ 
+                foreach (var line in lines)
+                {
                     var parts = line.Split(',');
-                    if(parts.Length == 4)
+                    if (parts.Length == 4)
                     {
                         Movies tmp = new Movies();
                         tmp.movieID = (parts[0]);
                         tmp.movieName = (parts[1]);
                         tmp.genre = (parts[2]);
                         tmp.duration = (parts[3]);
-                        data.Movies.Add(tmp);
+                        data.Movies.AddLast(tmp);
                     }
                 }
             }
@@ -64,7 +71,7 @@ namespace Database
             }
         }
 
-        public void loadShowtimeData(datastructure data)
+        public void loadShowtimeData(DataStructure data)
         {
             if (File.Exists(showTimeFilePath))
             {
@@ -78,7 +85,7 @@ namespace Database
                         tmp.movieID = parts[0];
                         tmp.showDateTime = (DateTime.Parse(parts[1]));
                         tmp.hall = (parts[2]);
-                        data.Showtimes.Add(tmp);
+                        data.Showtimes.AddLast(tmp);
                     }
                 }
 
@@ -88,7 +95,7 @@ namespace Database
                 Console.WriteLine("Không tồn tại file: " + showTimeFilePath);
             }
         }
-        public void saveCustomerData(datastructure data)
+        public void saveCustomerData(DataStructure data)
         {
             using (var writer = new StreamWriter(customerFilePath))
             {
@@ -99,7 +106,7 @@ namespace Database
             }
         }
 
-        public void saveMovieData(datastructure data)
+        public void saveMovieData(DataStructure data)
         {
             using (var writer = new StreamWriter(movieFilePath))
             {
@@ -110,7 +117,7 @@ namespace Database
             }
         }
 
-        public void saveShowtimeData(datastructure data)
+        public void saveShowtimeData(DataStructure data)
         {
             using (var writer = new StreamWriter(showTimeFilePath))
             {

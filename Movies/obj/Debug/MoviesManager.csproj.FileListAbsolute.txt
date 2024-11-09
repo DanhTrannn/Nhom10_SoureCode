@@ -12,3 +12,17 @@ C:\Users\PC\Desktop\Nhom10_SourceCode\Movies\obj\Debug\MoviesManager.csproj.Core
 C:\Users\PC\Desktop\Nhom10_SourceCode\Movies\obj\Debug\MoviesMa.7689F533.Up2Date
 C:\Users\PC\Desktop\Nhom10_SourceCode\Movies\obj\Debug\Movies.dll
 C:\Users\PC\Desktop\Nhom10_SourceCode\Movies\obj\Debug\Movies.pdb
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Movies.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Movies.dll
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Movies.pdb
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Database.dll
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\DataStructure.dll
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Database.pdb
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\Database.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\DataStructure.pdb
+D:\Code\DSA\Nhom10_SoureCode\Movies\bin\Debug\DataStructure.dll.config
+D:\Code\DSA\Nhom10_SoureCode\Movies\obj\Debug\MoviesManager.csproj.AssemblyReference.cache
+D:\Code\DSA\Nhom10_SoureCode\Movies\obj\Debug\MoviesManager.csproj.CoreCompileInputs.cache
+D:\Code\DSA\Nhom10_SoureCode\Movies\obj\Debug\MoviesMa.7689F533.Up2Date
+D:\Code\DSA\Nhom10_SoureCode\Movies\obj\Debug\Movies.dll
+D:\Code\DSA\Nhom10_SoureCode\Movies\obj\Debug\Movies.pdb
