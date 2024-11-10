@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 
 namespace datastructure
 {
-    // Linked List build tay
-
     public struct Customer
     {
         public string id;
@@ -72,11 +70,11 @@ namespace datastructure
             this.next = null;
         }
     }
-    public class  linkedlist<T>
+    public class  LinkedList<T>
     {
         public Node<T> head;
         public int size;
-        public linkedlist()
+        public LinkedList()
         {
             head = null;
             size = 0;
@@ -167,8 +165,8 @@ namespace datastructure
     }
     public class DataStructure
     {
-        public linkedlist<Customer> Customers = new linkedlist<Customer>();
-        public linkedlist<Movies> Movies = new linkedlist<Movies>();
-        public linkedlist<ShowTime> Showtimes = new linkedlist<ShowTime>();
+        public LinkedList<Customer> customers = new LinkedList<Customer>();
+        public LinkedList<Movies> movies = new LinkedList<Movies>();
+        public LinkedList<ShowTime> showtimes = new LinkedList<ShowTime>();
     }
 }

@@ -23,38 +23,38 @@ namespace MoviesManager
 
         public void AddMovie(Movies movie)
         {
-            _data.Movies.AddLast(movie);
-            Console.WriteLine("Add movie success!");
+            _data.movies.AddLast(movie);
+            Console.WriteLine("Movie is successfully added!");
             db.saveMovieData(_data);
         }
-        public void RemoveMovie(string id)
+        public void RemoveMovie(string targetID)
         {
-            if (_data.Movies.size == 0)
+            if (_data.movies.size == 0)
             {
-                Console.WriteLine("Movie list is empty, can't remove");
+                Console.WriteLine("Movies list is empty, can't remove");
                 return;
             }
 
             // Tìm phim cần xóa
-            Movies deleteMovie = _data.Movies.Find(m => m.movieID == id);
+            Movies deletedMovie = _data.movies.Find(mv => mv.movieID == targetID);
 
             // Kiểm tra nếu phim tồn tại
-            if (!deleteMovie.Equals(default(Movies)))
+            if (!deletedMovie.Equals(default(Movies)))
             {
                 // Xóa phim khỏi danh sách
-                _data.Movies.Remove(m => m.movieID == id);
+                _data.movies.Remove(mv => mv.movieID == targetID);
                 Console.WriteLine("Movie is successfully deleted!");
                 db.saveMovieData(_data);
             }
             else
             {
-                Console.WriteLine("Movie " + id + " is not found!");
+                Console.WriteLine("Movie with ID " + targetID + " is not found!");
             }
         }
 
         public void UpdateMovie(Movies updatedMovie)
         {
-            bool updated = _data.Movies.Update(m => m.movieID == updatedMovie.movieID, updatedMovie);
+            bool updated = _data.movies.Update(mv => mv.movieID == updatedMovie.movieID, updatedMovie);
             if (updated)
             {
                 Console.WriteLine("Movie is successfully updated!");
@@ -62,24 +62,25 @@ namespace MoviesManager
             }
             else
             {
-                Console.WriteLine("Movie " + updatedMovie.movieID + " is not found!");
+                Console.WriteLine("Movie with ID" + updatedMovie.movieID + " is not found!");
             }
         }
         public void DisplayMovie()
         {
-            _data.Movies.Display();
+            _data.movies.Display();
         }
-        public void FindMovie(string name)
+        public void FindMovie(string targetName)
         {
-            Movies movieToFind = _data.Movies.Find(n => n.movieName == name);
+            Movies movieToFind = _data.movies.Find(mv => mv.movieName == targetName);
+
             if (!movieToFind.Equals(default(Movies)))
             {
-                Console.WriteLine("Movie has found!");
+                Console.WriteLine("Movie is found!");
                 Console.WriteLine(movieToFind);
             }
             else
             {
-                Console.WriteLine("Movie is not found!");
+                Console.WriteLine("Movie with name " + targetName + " is not found!");
             }
         }
     }

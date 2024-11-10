@@ -10,9 +10,10 @@ using MoviesManager;
 using ShowtimeManager;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
-namespace Main
+
+namespace main
 {
-    public class Program
+    public class MainProgram
     {
         static void Main(string[] args)
         {
@@ -80,8 +81,8 @@ namespace Main
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
                 Console.Write("Please select an option (0-5): ");
-                string CustomerChoice = Console.ReadLine();
-                if(CustomerChoice == "1")
+                string customerOptions = Console.ReadLine();
+                if(customerOptions == "1")
                 {
                     Console.Write("Enter Customer's ID: ");
                     string id = Console.ReadLine();
@@ -90,15 +91,15 @@ namespace Main
                     Console.Write("Enter Customer's Email: ");
                     string email = Console.ReadLine();
                     Console.Write("Enter Customer's PhoneNumber: ");
-                    string phonenumber = Console.ReadLine();
+                    string phoneNumber = Console.ReadLine();
                     Console.Write("Enter Customer's PersonalCode: ");
                     string personalCode = Console.ReadLine();
-                    Customer customer = new Customer(id,name,email,phonenumber,personalCode);
+                    Customer customer = new Customer(id, name, email, phoneNumber, personalCode);
                     customerManager.AddCustomer(customer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if(CustomerChoice == "2")
+                else if(customerOptions == "2")
                 {
                     Console.Write("Enter Customer's ID want to edit: ");
                     string id = Console.ReadLine();
@@ -107,15 +108,15 @@ namespace Main
                     Console.Write("Enter Customer's Email want to edit: ");
                     string email = Console.ReadLine();
                     Console.Write("Enter Customer's PhoneNumber want to edit: ");
-                    string phonenumber = Console.ReadLine();
+                    string phoneNumber = Console.ReadLine();
                     Console.Write("Enter Customer's PersonalCode want to edit: ");
                     string personalCode = Console.ReadLine();
-                    Customer updateCustomer = new Customer(id, name,email,phonenumber, personalCode);
+                    Customer updateCustomer = new Customer(id, name, email, phoneNumber, personalCode);
                     customerManager.UpdateCustomer(updateCustomer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if( CustomerChoice == "3")
+                else if(customerOptions == "3")
                 {
                     Console.Write("Enter Customer's ID want to delete: ");
                     string id = Console.ReadLine();
@@ -123,7 +124,7 @@ namespace Main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (CustomerChoice == "4")
+                else if (customerOptions == "4")
                 {
                     Console.Write("Enter Customer's PhoneNumber want to find: ");
                     string phonenumber = Console.ReadLine();
@@ -131,13 +132,13 @@ namespace Main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (CustomerChoice == "5")
+                else if (customerOptions == "5")
                 {
                     customerManager.DisplayCustomer();
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if(CustomerChoice== "0")
+                else if(customerOptions == "0")
                 {
                     break;
                 }
@@ -200,7 +201,7 @@ namespace Main
                 }
                 else if (movieOptions == "3")
                 {
-                    Console.WriteLine("Enter Movie's ID want to remove: ");
+                    Console.Write("Enter Movie's ID want to remove: ");
                     string movieID = Console.ReadLine();
 
                     movieManager.RemoveMovie(movieID);
@@ -209,7 +210,7 @@ namespace Main
                 }
                 else if (movieOptions == "4")
                 {
-                    Console.WriteLine("Enter Movie's name to find: ");
+                    Console.Write("Enter Movie's name to find: ");
                     string movieName = Console.ReadLine().ToLower();
                     movieManager.FindMovie(movieName);
                     Console.Write("Press Enter to continue: ");
@@ -217,7 +218,7 @@ namespace Main
                 }
                 else if (movieOptions == "5")
                 {
-                    Console.WriteLine("List of movie: ");
+                    Console.WriteLine("List of movies: ");
                     movieManager.DisplayMovie();
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -247,17 +248,17 @@ namespace Main
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
                 Console.Write("Please select an option (0-4): ");
-                string showTimeChoice = Console.ReadLine();
-                if (showTimeChoice == "1")
+                string showTimeOptions = Console.ReadLine();
+                if (showTimeOptions == "1")
                 {
-                    Console.WriteLine("Enter Movie's ID: ");
+                    Console.Write("Enter Movie's ID: ");
                     string movieID = Console.ReadLine();
                     bool check = false;
                     DateTime myDateTime = DateTime.Now;
                     do
                     {
                         check = false;
-                        Console.Write("Enter Movie's Date and Time (format yyyy-MM-dd HH:mm:ss): ");
+                        Console.Write("Enter movie's date and time (witht format yyyy-MM-dd HH:mm:ss): ");
                         string input = Console.ReadLine();
                         try
                         {
@@ -269,14 +270,15 @@ namespace Main
                             Console.WriteLine("Date and time is invalid format!");
                         }
                     } while (check);
-                    Console.Write("Enter Movie's hall: ");
+
+                    Console.Write("Enter movie's hall: ");
                     string movieHall = Console.ReadLine();
                     ShowTime newShowTime = new ShowTime(movieID, myDateTime, movieHall);
                     showTimeManager.AddShowTime(newShowTime);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (showTimeChoice == "2")
+                else if (showTimeOptions == "2")
                 {
                     Console.Write("Enter Movie's ID: ");
                     string movieID = Console.ReadLine();
@@ -284,9 +286,9 @@ namespace Main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (showTimeChoice == "3")
+                else if (showTimeOptions == "3")
                 {
-                    Console.WriteLine("Enter Movie's ID: ");
+                    Console.Write("Enter movie's ID: ");
                     string movieID = Console.ReadLine();
                     bool check = false;
                     DateTime myDateTime = DateTime.Now;
@@ -305,21 +307,22 @@ namespace Main
                             Console.WriteLine("Date and time is invalid format!");
                         }
                     } while (check);
-                    Console.Write("Enter Movie's hall: ");
+
+                    Console.Write("Enter movie's hall: ");
                     string movieHall = Console.ReadLine();
                     ShowTime newShowTime = new ShowTime(movieID, myDateTime, movieHall);
                     showTimeManager.UpdateShowTime(newShowTime);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (showTimeChoice == "4")
+                else if (showTimeOptions == "4")
                 {
-                    Console.WriteLine("List of Show time: ");
+                    Console.WriteLine("List of showtime: ");
                     showTimeManager.DisplayShowTime();
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (showTimeChoice == "0")
+                else if (showTimeOptions == "0")
                 {
                     break;
                 }

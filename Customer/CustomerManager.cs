@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using database;
 using datastructure;
+
 namespace CustomersManager
 {
     public class CustomerManager
@@ -17,37 +18,37 @@ namespace CustomersManager
             _data = data;
             db = new DataBase();
         }
-        public void AddCustomer(Customer customer)
+        public void AddCustomer(Customer newCustomer)
         {
-            _data.Customers.AddLast(customer);
+            _data.customers.AddLast(newCustomer);
             Console.WriteLine("Customer is successfully added!");
             db.saveCustomerData(_data);
         }
-        public void RemoveCustomer(string Id)
+        public void RemoveCustomer(string targetID)
         {
-            if (_data.Customers.size == 0)
+            if (_data.customers.size == 0)
             {
                 Console.WriteLine("Customer list is empty, can't remove!!");
                 return;
             }
             else
             {
-                Customer delCustomer = _data.Customers.Find(c => c.id == Id);
-                if (!delCustomer.Equals(default(Customer)))
+                Customer deletedCustomer = _data.customers.Find(c => c.id == targetID);
+                if (!deletedCustomer.Equals(default(Customer)))
                 {
-                    _data.Customers.Remove(c => c.id == Id);
-                    Console.WriteLine("Customer is successfully deleted!");
+                    _data.customers.Remove(c => c.id == targetID);
+                    Console.WriteLine("Customer is successfully removed!");
                     db.saveCustomerData(_data);
                 }
                 else
                 {
-                    Console.WriteLine("Can found customer: "+ Id + " !");
+                    Console.WriteLine("Customer with ID "+ targetID + " is not found!");
                 }
             }
         }
         public void UpdateCustomer(Customer updateCustomer)
         {
-            bool update = _data.Customers.Update(c => c.id == updateCustomer.id, updateCustomer);
+            bool update = _data.customers.Update(c => c.id == updateCustomer.id, updateCustomer);
             if (update)
             {
                 Console.WriteLine("Customer is successfully updated!");
@@ -55,12 +56,12 @@ namespace CustomersManager
             }
             else
             {
-                Console.WriteLine("Customer " + updateCustomer.id + " is not found!");
+                Console.WriteLine("Customer with ID " + updateCustomer.id + " is not found!");
             }
         }
-        public void FindCustomer(string data) 
+        public void FindCustomer(string targetPhoneNumber) 
         {
-            Customer res = _data.Customers.Find(c => c.phoneNumber == data);
+            Customer res = _data.customers.Find(c => c.phoneNumber == targetPhoneNumber);
             if (!res.Equals(default(Customer)))
             {
                 Console.WriteLine("Customer is found!");
@@ -68,12 +69,12 @@ namespace CustomersManager
             }
             else
             {
-                Console.WriteLine("Can not find customer!");
+                Console.WriteLine("Customer with phone number " + targetPhoneNumber + " is not found!");
             }
         }
         public void DisplayCustomer()
         {
-            _data.Customers.Display();
+            _data.customers.Display();
         }
     }
 }

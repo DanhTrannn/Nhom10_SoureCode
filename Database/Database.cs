@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using datastructure;
 using System.Threading;
+
 namespace database
 {
     public class DataBase
@@ -27,7 +28,7 @@ namespace database
                     // Tách dữ liệu trên 1 dòng thông qua các dấu phẩy và trả về mảng parts
                     var parts = line.Split(',');
                     // Kiểm tra xem nếu 1 dòng có đủ 5 phần dữ liệu thì tạo một đối tượng Customer mới
-                    // Sau đó thêm vào d
+                    // Sau đó thêm vào cấu trúc dữ liệu
                     if (parts.Length == 5)
                     {
                         Customer tmp = new Customer();
@@ -36,7 +37,7 @@ namespace database
                         tmp.email = (parts[2]);
                         tmp.phoneNumber = (parts[3]);
                         tmp.personalCode = (parts[4]);
-                        data.Customers.AddLast(tmp);
+                        data.customers.AddLast(tmp);
                     }
                 }
             }
@@ -61,7 +62,7 @@ namespace database
                         tmp.movieName = (parts[1]);
                         tmp.genre = (parts[2]);
                         tmp.duration = (parts[3]);
-                        data.Movies.AddLast(tmp);
+                        data.movies.AddLast(tmp);
                     }
                 }
             }
@@ -85,7 +86,7 @@ namespace database
                         tmp.movieID = parts[0];
                         tmp.showDateTime = (DateTime.Parse(parts[1]));
                         tmp.hall = (parts[2]);
-                        data.Showtimes.AddLast(tmp);
+                        data.showtimes.AddLast(tmp);
                     }
                 }
 
@@ -100,7 +101,7 @@ namespace database
         {
             using (var writer = new StreamWriter(customerFilePath))
             {
-                Node<Customer> current = data.Customers.head;
+                Node<Customer> current = data.customers.head;
                 while (current != null)
                 {
                     Customer customer = current.data;
@@ -113,7 +114,7 @@ namespace database
         {
             using (var writer = new StreamWriter(movieFilePath))
             {
-                Node<Movies> current = data.Movies.head;
+                Node<Movies> current = data.movies.head;
                 while (current != null)
                 {
                     Movies movie = current.data;
@@ -126,7 +127,7 @@ namespace database
         {
             using (var writer = new StreamWriter(showTimeFilePath))
             {
-                Node<ShowTime> current = data.Showtimes.head;
+                Node<ShowTime> current = data.showtimes.head;
                 while (current != null)
                 {
                     ShowTime showtime = current.data;
