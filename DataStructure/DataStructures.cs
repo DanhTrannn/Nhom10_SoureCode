@@ -163,8 +163,82 @@ namespace datastructure
             Console.WriteLine();
         }
     }
+    public class Queue<T>
+    {
+        private Node<T> front;
+        private Node<T> rear;
+        private int size;
+        public int Count
+        {
+            get
+            {
+                return size;
+            }
+        }
+        public Queue()
+        {
+            front = null;
+            rear = null;
+            size = 0;
+        }
+        public bool isEmpty()
+        {
+            return size == 0;
+        }
+        public void Enqueue(T value)
+        {
+            Node<T> newNode  = new Node<T>(value);
+            if (rear == null)
+            {
+                front = newNode;
+                rear = newNode;
+            }
+            else
+            {
+                rear.next = newNode;
+                rear = newNode;
+            }
+            size++;
+        }
+        public T Dequeue()
+        {
+            if (front == null)
+            {
+                throw new Exception("Queue is Empty!");
+            }
+            Node<T> tmp = front;
+            front = tmp.next;
+            T tempValue = tmp.data;
+            if(front == null)
+            {
+                rear = null;
+            }
+            size--;
+            return tempValue;
+        }
+        public T Peek()
+        {
+            if (front == null)
+            {
+                throw new Exception("Queue is Empty!");
+            }
+            return front.data;
+        }
+        public void Display()
+        {
+            if (isEmpty())
+            {
+                return;
+            }
+            for (Node<T> current = front; current != null; current = current.next)
+            {
+                Console.WriteLine(current.data);
+            }
+        }
+    }
     public class DataStructure
     {
+        public Queue<Customer> line = new Queue<Customer>();
         public LinkedList<Customer> customers = new LinkedList<Customer>();
         public LinkedList<Movies> movies = new LinkedList<Movies>();
         public LinkedList<ShowTime> showtimes = new LinkedList<ShowTime>();

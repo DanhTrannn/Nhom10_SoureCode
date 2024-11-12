@@ -73,11 +73,14 @@ namespace main
                 Console.WriteLine("======================================");
                 Console.WriteLine("         CUSTOMER MANAGEMENT         ");
                 Console.WriteLine("======================================");
-                Console.WriteLine("||  1. Add Customer                  ||");
-                Console.WriteLine("||  2. Edit Customer                 ||");
-                Console.WriteLine("||  3. Delete Customer               ||");
-                Console.WriteLine("||  4. Search Customer               ||");
-                Console.WriteLine("||  5. Display All Customers         ||");
+                Console.WriteLine("||  1. Checkin new customer          ||");
+                Console.WriteLine("||  2. Show customer in line         ||");
+                Console.WriteLine("||  3. Show first customer in line   ||");
+                Console.WriteLine("||  4. Checkout current customer     ||");
+                Console.WriteLine("||  5. Edit Customer                 ||");
+                Console.WriteLine("||  6. Delete Customer               ||");
+                Console.WriteLine("||  7. Search Customer               ||");
+                Console.WriteLine("||  8. Display All Customers         ||");
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
                 Console.Write("Please select an option (0-5): ");
@@ -95,11 +98,29 @@ namespace main
                     Console.Write("Enter Customer's PersonalCode: ");
                     string personalCode = Console.ReadLine();
                     Customer customer = new Customer(id, name, email, phoneNumber, personalCode);
-                    customerManager.AddCustomer(customer);
+                    customerManager.enterIntoLine(customer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if(customerOptions == "2")
+                else if (customerOptions == "2")
+                {
+                    customerManager.showCustomerInLine();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if (customerOptions == "3")
+                {
+                    customerManager.showFirstInLine();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if (customerOptions == "4")
+                {
+                    customerManager.checkOutComplete();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if(customerOptions == "5")
                 {
                     Console.Write("Enter Customer's ID want to edit: ");
                     string id = Console.ReadLine();
@@ -116,7 +137,7 @@ namespace main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if(customerOptions == "3")
+                else if(customerOptions == "6")
                 {
                     Console.Write("Enter Customer's ID want to delete: ");
                     string id = Console.ReadLine();
@@ -124,7 +145,7 @@ namespace main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (customerOptions == "4")
+                else if (customerOptions == "7")
                 {
                     Console.Write("Enter Customer's PhoneNumber want to find: ");
                     string phonenumber = Console.ReadLine();
@@ -132,7 +153,7 @@ namespace main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if (customerOptions == "5")
+                else if (customerOptions == "8")
                 {
                     customerManager.DisplayCustomer();
                     Console.Write("Press Enter to continue: ");
