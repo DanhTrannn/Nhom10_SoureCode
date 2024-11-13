@@ -83,6 +83,48 @@ namespace MoviesManager
                 Console.WriteLine("Movie with name " + targetName + " is not found!");
             }
         }
+        public void FindShowTimeByMovieName(string movieName)
+        {
+            if(_data.movies.size == 0)
+            {
+                Console.WriteLine("Movies list is empty!");
+                return;
+            }
+            string movieID = "";
+            Node<Movies> tmp = _data.movies.head;
+            while(tmp != null)
+            {
+                if(tmp.data.movieName == movieName)
+                {
+                    movieID = tmp.data.movieID;
+                    break;
+                }
+                tmp = tmp.next;
+            }
+            if (!movieID.Equals(""))
+            {
+                if (_data.showtimes.size == 0)
+                {
+                    Console.WriteLine("Not found showtime's movie has name: " + movieName);
+                }
+                else
+                {
+                    Node<ShowTime> current = _data.showtimes.head;
+                    while (current != null)
+                    {
+                        if (current.data.movieID.Equals(movieID))
+                        {
+                            Console.WriteLine(current.data);
+                        }
+                        current = current.next;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Not found movie has name: " + movieName);
+            }
+        }
     }
 }
 

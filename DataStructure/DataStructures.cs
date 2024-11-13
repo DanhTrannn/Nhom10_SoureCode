@@ -58,7 +58,7 @@ namespace datastructure
             this.showDateTime = showDateTime;
             this.hall = hall;
         }
-        public override string ToString() => $"ShowTime: {movieID}, {showDateTime}, {hall}";
+        public override string ToString() => $"ShowTime: {showDateTime}, {hall}";
     }
     public class Node<T>
     {

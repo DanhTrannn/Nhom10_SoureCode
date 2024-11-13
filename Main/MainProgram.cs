@@ -184,6 +184,7 @@ namespace main
                 Console.WriteLine("||  3. Delete Movie                  ||");
                 Console.WriteLine("||  4. Search Movie                  ||");
                 Console.WriteLine("||  5. Display All Movies            ||");
+                Console.WriteLine("||  6. Find ShowTime by MovieName    ||");
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
                 Console.Write("Please select an option (0-5): ");
@@ -241,6 +242,14 @@ namespace main
                 {
                     Console.WriteLine("List of movies: ");
                     movieManager.DisplayMovie();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if(movieOptions == "6")
+                {
+                    Console.Write("Enter movie's Name: ");
+                    string movieName = Console.ReadLine();
+                    movieManager.FindShowTimeByMovieName(movieName);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
