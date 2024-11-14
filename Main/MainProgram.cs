@@ -122,6 +122,7 @@ namespace main
                 }
                 else if(customerOptions == "5")
                 {
+                    
                     Console.Write("Enter Customer's ID want to edit: ");
                     string id = Console.ReadLine();
                     Console.Write("Enter Customer's Name want to edit: ");
@@ -132,8 +133,29 @@ namespace main
                     string phoneNumber = Console.ReadLine();
                     Console.Write("Enter Customer's PersonalCode want to edit: ");
                     string personalCode = Console.ReadLine();
+
                     Customer updateCustomer = new Customer(id, name, email, phoneNumber, personalCode);
+                    Customer beforeUpdatedCustomer = customerManager.getCustomerByID(id);
                     customerManager.UpdateCustomer(updateCustomer);
+                    DataStructure dataStructure = new DataStructure();
+                    dataStructure.performAction(() => customerManager.UpdateCustomer(beforeUpdatedCustomer));
+                    string undoOrNot = "";
+                    do
+                    {
+                        Console.WriteLine("Do you want to undo your recent action? (Enter Y/N)");
+                        undoOrNot = Console.ReadLine();
+                        if (undoOrNot == "Y" || undoOrNot == "N")
+                        {
+                            break;
+                        }
+                    } while (true);
+                    if (undoOrNot == "Y")
+                    {
+                        if (dataStructure.undo())
+                        {
+                            Console.WriteLine("Action undo successfully!");
+                        }
+                    }
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
@@ -141,7 +163,28 @@ namespace main
                 {
                     Console.Write("Enter Customer's ID want to delete: ");
                     string id = Console.ReadLine();
+                    string prevID = customerManager.findBefore(id);
+                    Customer removedCustomer = customerManager.getCustomerByID(id);
                     customerManager.RemoveCustomer(id);
+                    DataStructure dataStructure = new DataStructure();
+                    dataStructure.performAction(() => customerManager.addCustomerBehindByID(removedCustomer, prevID));
+                    string undoOrNot = "";
+                    do
+                    {
+                        Console.WriteLine("Do you want to undo your recent action? (Enter Y/N)");
+                        undoOrNot = Console.ReadLine();
+                        if (undoOrNot == "Y" || undoOrNot == "N")
+                        {
+                            break;
+                        }
+                    } while (true);
+                    if (undoOrNot == "Y")
+                    {
+                        if (dataStructure.undo())
+                        {
+                            Console.WriteLine("Action undo successfully!");
+                        }
+                    }
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }

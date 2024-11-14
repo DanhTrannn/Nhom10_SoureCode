@@ -70,7 +70,7 @@ namespace datastructure
             this.next = null;
         }
     }
-    public class  LinkedList<T>
+    public class LinkedList<T>
     {
         public Node<T> head;
         public int size;
@@ -79,7 +79,6 @@ namespace datastructure
             head = null;
             size = 0;
         }
-
         public bool isEmpty()
         {
             return size == 0;
@@ -138,6 +137,35 @@ namespace datastructure
             }
             return default(T); // Trả về giá trị mặc định nếu không tìm thấy
         }
+        public void AddBehind(T value, Predicate<T> match)
+        {
+            Node<T> newNode = new Node<T>(value);
+            Node<T> current = head;
+            while(current != null)
+            {
+                if (match(current.data))
+                {
+                    newNode.next = current.next;
+                    current.next = newNode;
+                    size++;
+                    return;
+                }
+                current = current.next;
+            }
+        }
+        public T FindBefore(Predicate<T> match)
+        {
+            Node<T> current = head;
+            while(current != null && current.next.data != null)
+            {
+                if (match(current.next.data))
+                {
+                    return current.data;
+                }
+                current = current.next;
+            }
+            return default(T);
+        }
         public bool Update(Predicate<T> match, T newData)
         {
             Node<T> current = head;
@@ -162,6 +190,7 @@ namespace datastructure
             }
             Console.WriteLine();
         }
+
     }
     public class Queue<T>
     {
@@ -235,6 +264,71 @@ namespace datastructure
                 Console.WriteLine(current.data);
             }
         }
+        public class Stack<T>
+        {
+            private Node<T> top;
+            private int size;
+            public int Count
+            {
+                get
+                {
+                    return size;
+                }
+            }
+            public Stack()
+            {
+                top = null;
+                size = 0;
+            }
+            public bool IsEmpty()
+            {
+                return size == 0;
+            }
+            public void Push(T value)
+            {
+                Node<T> newNode = new Node<T>(value);
+                if (top == null)
+                {
+                    top = newNode;
+                    return;
+                }
+                newNode.next = top;
+                top = newNode;
+                size++;
+            }
+            public T Pop()
+            {
+                if (top == null)
+                {
+                    throw new Exception("Stack is empty!");
+                }
+                Node<T> nodeTemp = top;
+                top = nodeTemp.next;
+                T tempValue = nodeTemp.data;
+                size--;
+                nodeTemp = null;
+                return tempValue;
+            }
+            public T Peek()
+            {
+                if(top == null)
+                {
+                    throw new Exception("Stack is Empty!");
+                }
+                return top.data;
+            }
+            public void Clear()
+            {
+                Node<T> tempNode;
+                while (top != null)
+                {
+                    tempNode = top;
+                    top = tempNode.next;
+                    tempNode = null;
+                }
+                size = 0;
+            }
+        }
     }
     public class DataStructure
     {
@@ -242,5 +336,46 @@ namespace datastructure
         public LinkedList<Customer> customers = new LinkedList<Customer>();
         public LinkedList<Movies> movies = new LinkedList<Movies>();
         public LinkedList<ShowTime> showtimes = new LinkedList<ShowTime>();
+        public Stack<Action> undoStack = new Stack<Action>();
+        public Stack<Action> redoStack = new Stack<Action>();
+        public void performAction(Action undoAction)
+        {
+            undoStack.Push(undoAction);
+            redoStack.Clear();
+        }
+        public bool undo()
+        {
+            if (undoStack.Count > 0)
+            {
+                var action = undoStack.Pop();
+                // Thực hiện lại thao tác vừa undo khi lấy ra khỏi undoStack
+                action();
+
+                // Lưu thao tác vào redoStack để có thể làm lại
+                redoStack.Push(action);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Nothing to undo!");
+                return false;
+            }
+        }
+        public void redo()
+        {
+            if (redoStack.Count > 0)
+            {
+                var action = redoStack.Pop();
+                // Thực hiện lại thao tác
+                action();            
+
+                // Lưu lại thao tác vào undoStack
+                undoStack.Push(action);
+            }
+            else
+            {
+                Console.WriteLine("Nothing to redo!");
+            }
+        }
     }
 }

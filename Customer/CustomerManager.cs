@@ -18,14 +18,8 @@ namespace CustomersManager
             _data = data;
             db = new DataBase();
         }
-        public void enterIntoLine(Customer newCustomer)
-        {
-            _data.line.Enqueue(newCustomer);
-            Console.WriteLine("Customer is now in line waiting to check in!");
-        }
         public void AddCustomer(Customer newCustomer)
         {
-
             _data.customers.AddLast(newCustomer);
             Console.WriteLine("Customer is successfully added into list!");
             db.saveCustomerData(_data);
@@ -77,6 +71,26 @@ namespace CustomersManager
             {
                 Console.WriteLine("Customer with phone number " + targetPhoneNumber + " is not found!");
             }
+        }
+        public Customer getCustomerByID(string targetID)
+        {
+            Customer res = _data.customers.Find(c => c.id == targetID);
+            return res;
+        }
+        public string findBefore(string targetID)
+        {
+            Customer customerTarget = _data.customers.FindBefore(c => c.id == targetID);
+            return customerTarget.id;
+        }
+        public void addCustomerBehindByID(Customer customer, string targetID)
+        {
+            _data.customers.AddBehind(customer, c => c.id == targetID);
+            db.saveCustomerData(_data);
+        }
+        public void enterIntoLine(Customer newCustomer)
+        {
+            _data.line.Enqueue(newCustomer);
+            Console.WriteLine("Customer is now in line waiting to check in!");
         }
         public void showFirstInLine()
         {

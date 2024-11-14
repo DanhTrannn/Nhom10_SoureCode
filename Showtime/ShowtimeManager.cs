@@ -18,8 +18,6 @@ namespace ShowtimeManager
             this._data = data;
             db = new DataBase();
         }
-
-
         public void AddShowTime(ShowTime newShowTime)
         {
             _data.showtimes.AddLast(newShowTime);
