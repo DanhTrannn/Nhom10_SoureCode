@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Security.AccessControl;
 using System.Security.Policy;
 using System.Text;
@@ -39,7 +40,7 @@ namespace datastructure
         {
             this.movieID = movieID;
             this.movieName = movieName;
-            this.genre = genre;
+            this.genre = genre; 
             this.duration = duration;
         }
         public override string ToString() => $"Movie: {movieID}, {movieName}, {genre}, {duration}";
@@ -156,7 +157,11 @@ namespace datastructure
         public T FindBefore(Predicate<T> match)
         {
             Node<T> current = head;
-            while(current != null && current.next.data != null)
+            if (current != null && match(current.data))
+            {
+                return default(T); // Không có phần tử trước phần tử đầu tiên
+            }
+            while (current != null && current.next != null)
             {
                 if (match(current.next.data))
                 {
@@ -264,70 +269,74 @@ namespace datastructure
                 Console.WriteLine(current.data);
             }
         }
-        public class Stack<T>
+    }
+    public class Stack<T>
+    {
+        private Node<T> top;
+        private int size;
+        public Stack()
         {
-            private Node<T> top;
-            private int size;
-            public int Count
+            top = null;
+            size = 0;
+        }
+        public int Count()
+        {
+            Node<T> tmp = top;
+            int count = 0;
+            while(tmp != null)
             {
-                get
-                {
-                    return size;
-                }
+                count++;
+                tmp = tmp.next;
             }
-            public Stack()
+            return count;   
+        }
+        public bool IsEmpty()
+        {
+            return size == 0;
+        }
+        public void Push(T value)
+        {
+            Node<T> newNode = new Node<T>(value);
+            if (top == null)
             {
-                top = null;
-                size = 0;
-            }
-            public bool IsEmpty()
-            {
-                return size == 0;
-            }
-            public void Push(T value)
-            {
-                Node<T> newNode = new Node<T>(value);
-                if (top == null)
-                {
-                    top = newNode;
-                    return;
-                }
-                newNode.next = top;
                 top = newNode;
-                size++;
+                return;
             }
-            public T Pop()
+            newNode.next = top;
+            top = newNode;
+            size++;
+        }
+        public T Pop()
+        {
+            if (top == null)
             {
-                if (top == null)
-                {
-                    throw new Exception("Stack is empty!");
-                }
-                Node<T> nodeTemp = top;
-                top = nodeTemp.next;
-                T tempValue = nodeTemp.data;
-                size--;
-                nodeTemp = null;
-                return tempValue;
+                throw new Exception("Stack is empty!");
             }
-            public T Peek()
+            Node<T> nodeTemp = top;
+            top = nodeTemp.next;
+            T tempValue = nodeTemp.data;
+            size--;
+            nodeTemp = null;
+            return tempValue;
+        }
+        public T Peek()
+        {
+            if (top == null)
             {
-                if(top == null)
-                {
-                    throw new Exception("Stack is Empty!");
-                }
-                return top.data;
+                throw new Exception("Stack is Empty!");
             }
-            public void Clear()
+            return top.data;
+        }
+        public void Clear()
+        {
+            Node<T> tempNode;
+            while (top != null)
             {
-                Node<T> tempNode;
-                while (top != null)
-                {
-                    tempNode = top;
-                    top = tempNode.next;
-                    tempNode = null;
-                }
-                size = 0;
+                tempNode = top;
+                top = tempNode.next;
+                tempNode = null;
             }
+            size = 0;
         }
     }
     public class DataStructure
@@ -336,46 +345,34 @@ namespace datastructure
         public LinkedList<Customer> customers = new LinkedList<Customer>();
         public LinkedList<Movies> movies = new LinkedList<Movies>();
         public LinkedList<ShowTime> showtimes = new LinkedList<ShowTime>();
-        public Stack<Action> undoStack = new Stack<Action>();
-        public Stack<Action> redoStack = new Stack<Action>();
-        public void performAction(Action undoAction)
+        public Stack<UndoAction> undo = new Stack<UndoAction>();
+    }
+    public class UndoAction
+    {
+        public string action;
+        public Customer oldcustomer;
+        public Customer newcustomer;
+        public Movies oldmovie;
+        public Movies newmovie;
+        public ShowTime oldshowtime;
+        public ShowTime newshowtime;
+        public UndoAction(string action, Customer oldcustomer, Customer newcustomer = default(Customer))
         {
-            undoStack.Push(undoAction);
-            redoStack.Clear();
+            this.action = action;
+            this.oldcustomer = oldcustomer;
+            this.newcustomer = newcustomer;
         }
-        public bool undo()
+        public UndoAction(string action, Movies oldmovie, Movies newmovie = default(Movies))
         {
-            if (undoStack.Count > 0)
-            {
-                var action = undoStack.Pop();
-                // Thực hiện lại thao tác vừa undo khi lấy ra khỏi undoStack
-                action();
-
-                // Lưu thao tác vào redoStack để có thể làm lại
-                redoStack.Push(action);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Nothing to undo!");
-                return false;
-            }
+            this.action = action;
+            this.oldmovie = oldmovie;
+            this.newmovie = newmovie;
         }
-        public void redo()
+        public UndoAction(string action, ShowTime oldshowtime, ShowTime newshowtime = default(ShowTime))
         {
-            if (redoStack.Count > 0)
-            {
-                var action = redoStack.Pop();
-                // Thực hiện lại thao tác
-                action();            
-
-                // Lưu lại thao tác vào undoStack
-                undoStack.Push(action);
-            }
-            else
-            {
-                Console.WriteLine("Nothing to redo!");
-            }
+            this.action = action;
+            this.oldshowtime = oldshowtime;
+            this.newshowtime = newshowtime;
         }
     }
 }

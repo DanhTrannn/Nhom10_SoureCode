@@ -81,9 +81,10 @@ namespace main
                 Console.WriteLine("||  6. Delete Customer               ||");
                 Console.WriteLine("||  7. Search Customer               ||");
                 Console.WriteLine("||  8. Display All Customers         ||");
+                Console.WriteLine("||  9. Undo last action              ||");
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
-                Console.Write("Please select an option (0-5): ");
+                Console.Write("Please select an option (0-9): ");
                 string customerOptions = Console.ReadLine();
                 if(customerOptions == "1")
                 {
@@ -135,27 +136,7 @@ namespace main
                     string personalCode = Console.ReadLine();
 
                     Customer updateCustomer = new Customer(id, name, email, phoneNumber, personalCode);
-                    Customer beforeUpdatedCustomer = customerManager.getCustomerByID(id);
                     customerManager.UpdateCustomer(updateCustomer);
-                    DataStructure dataStructure = new DataStructure();
-                    dataStructure.performAction(() => customerManager.UpdateCustomer(beforeUpdatedCustomer));
-                    string undoOrNot = "";
-                    do
-                    {
-                        Console.WriteLine("Do you want to undo your recent action? (Enter Y/N)");
-                        undoOrNot = Console.ReadLine();
-                        if (undoOrNot == "Y" || undoOrNot == "N")
-                        {
-                            break;
-                        }
-                    } while (true);
-                    if (undoOrNot == "Y")
-                    {
-                        if (dataStructure.undo())
-                        {
-                            Console.WriteLine("Action undo successfully!");
-                        }
-                    }
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
@@ -163,28 +144,7 @@ namespace main
                 {
                     Console.Write("Enter Customer's ID want to delete: ");
                     string id = Console.ReadLine();
-                    string prevID = customerManager.findBefore(id);
-                    Customer removedCustomer = customerManager.getCustomerByID(id);
                     customerManager.RemoveCustomer(id);
-                    DataStructure dataStructure = new DataStructure();
-                    dataStructure.performAction(() => customerManager.addCustomerBehindByID(removedCustomer, prevID));
-                    string undoOrNot = "";
-                    do
-                    {
-                        Console.WriteLine("Do you want to undo your recent action? (Enter Y/N)");
-                        undoOrNot = Console.ReadLine();
-                        if (undoOrNot == "Y" || undoOrNot == "N")
-                        {
-                            break;
-                        }
-                    } while (true);
-                    if (undoOrNot == "Y")
-                    {
-                        if (dataStructure.undo())
-                        {
-                            Console.WriteLine("Action undo successfully!");
-                        }
-                    }
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
@@ -199,6 +159,12 @@ namespace main
                 else if (customerOptions == "8")
                 {
                     customerManager.DisplayCustomer();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if(customerOptions == "9")
+                {
+                    customerManager.undo();
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
@@ -228,9 +194,10 @@ namespace main
                 Console.WriteLine("||  4. Search Movie                  ||");
                 Console.WriteLine("||  5. Display All Movies            ||");
                 Console.WriteLine("||  6. Find ShowTime by MovieName    ||");
+                Console.WriteLine("||  7. Undo last action              ||");
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
-                Console.Write("Please select an option (0-5): ");
+                Console.Write("Please select an option (0-7): ");
                 string movieOptions = Console.ReadLine();
                 if (movieOptions == "1")
                 {
@@ -261,6 +228,7 @@ namespace main
 
                     Movies updatedMovies = new Movies(movieID, movieName, movieGenre, movieDuration);
                     movieManager.UpdateMovie(updatedMovies);
+
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
@@ -296,6 +264,12 @@ namespace main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
+                else if(movieOptions == "7")
+                {
+                    movieManager.undo();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
                 else if (movieOptions == "0")
                 {
                     break;
@@ -318,9 +292,10 @@ namespace main
                 Console.WriteLine("||  2. Delete Showtime               ||");
                 Console.WriteLine("||  3. Update Showtime               ||");
                 Console.WriteLine("||  4. Display Showtimes             ||");
+                Console.WriteLine("||  5. Undo last action              ||");
                 Console.WriteLine("||  0. Back to Main Menu             ||");
                 Console.WriteLine("======================================");
-                Console.Write("Please select an option (0-4): ");
+                Console.Write("Please select an option (0-5): ");
                 string showTimeOptions = Console.ReadLine();
                 if (showTimeOptions == "1")
                 {
@@ -392,6 +367,12 @@ namespace main
                 {
                     Console.WriteLine("List of showtime: ");
                     showTimeManager.DisplayShowTime();
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
+                }
+                else if(showTimeOptions == "5")
+                {
+                    showTimeManager.undo();
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }

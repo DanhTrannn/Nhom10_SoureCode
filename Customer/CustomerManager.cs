@@ -20,9 +20,18 @@ namespace CustomersManager
         }
         public void AddCustomer(Customer newCustomer)
         {
-            _data.customers.AddLast(newCustomer);
-            Console.WriteLine("Customer is successfully added into list!");
-            db.saveCustomerData(_data);
+            Customer check = _data.customers.Find(c => c.id == newCustomer.id);
+            if (!check.Equals(default(Customer)))
+            {
+                _data.customers.AddLast(newCustomer);
+                _data.undo.Push(new UndoAction("Add", newCustomer));
+                Console.WriteLine("Customer is successfully added into list!");
+                db.saveCustomerData(_data);
+            }
+            else
+            {
+                Console.WriteLine("Have customer's id: " + newCustomer.id + "can't add, only updated");
+            }
         }
         public void RemoveCustomer(string targetID)
         {
@@ -37,6 +46,7 @@ namespace CustomersManager
                 if (!deletedCustomer.Equals(default(Customer)))
                 {
                     _data.customers.Remove(c => c.id == targetID);
+                    _data.undo.Push(new UndoAction("Remove", deletedCustomer));
                     Console.WriteLine("Customer is successfully removed!");
                     db.saveCustomerData(_data);
                 }
@@ -48,9 +58,11 @@ namespace CustomersManager
         }
         public void UpdateCustomer(Customer updateCustomer)
         {
+            Customer oldCustomer = _data.customers.Find(c => c.id == updateCustomer.id);
             bool update = _data.customers.Update(c => c.id == updateCustomer.id, updateCustomer);
             if (update)
             {
+                _data.undo.Push(new UndoAction("Update", oldCustomer, updateCustomer));
                 Console.WriteLine("Customer is successfully updated!");
                 db.saveCustomerData(_data);
             }
@@ -65,28 +77,28 @@ namespace CustomersManager
             if (!res.Equals(default(Customer)))
             {
                 Console.WriteLine("Customer is found!");
-                res.ToString();
+                Console.WriteLine(res);
             }
             else
             {
                 Console.WriteLine("Customer with phone number " + targetPhoneNumber + " is not found!");
             }
         }
-        public Customer getCustomerByID(string targetID)
-        {
-            Customer res = _data.customers.Find(c => c.id == targetID);
-            return res;
-        }
-        public string findBefore(string targetID)
-        {
-            Customer customerTarget = _data.customers.FindBefore(c => c.id == targetID);
-            return customerTarget.id;
-        }
-        public void addCustomerBehindByID(Customer customer, string targetID)
-        {
-            _data.customers.AddBehind(customer, c => c.id == targetID);
-            db.saveCustomerData(_data);
-        }
+        //public Customer getCustomerByID(string targetID)
+        //{
+        //    Customer res = _data.customers.Find(c => c.id == targetID);
+        //    return res;
+        //}
+        //public string findBefore(string targetID)
+        //{
+        //    Customer customerTarget = _data.customers.FindBefore(c => c.id == targetID);
+        //    return customerTarget.id;
+        //}
+        //public void addCustomerBehindByID(Customer customer, string targetID)
+        //{
+        //    _data.customers.AddBehind(customer, c => c.id == targetID);
+        //    db.saveCustomerData(_data);
+        //}
         public void enterIntoLine(Customer newCustomer)
         {
             _data.line.Enqueue(newCustomer);
@@ -126,6 +138,36 @@ namespace CustomersManager
         public void DisplayCustomer()
         {
             _data.customers.Display();
+        }
+        public void undo()
+        {
+            if(_data.undo.Count() > 0)
+            {
+                UndoAction lastAction = _data.undo.Pop();
+                if(lastAction.action.Equals("Add"))
+                {
+                    _data.customers.Remove(c => c.id == lastAction.oldcustomer.id);
+                    Console.WriteLine("Undo success");
+                }else if(lastAction.action.Equals("Remove"))
+                {
+                    _data.customers.AddLast(lastAction.oldcustomer);
+                    Console.WriteLine("Undo success");
+                }
+                else if(lastAction.action.Equals("Update"))
+                {
+                    _data.customers.Update(c => c.id == lastAction.oldcustomer.id, lastAction.oldcustomer);
+                    Console.WriteLine("Undo success");
+                }
+                else
+                {
+                    Console.WriteLine("Unknown undo action.");
+                }
+                db.saveCustomerData(_data);
+            }
+            else
+            {
+                Console.WriteLine("No actions to undo.");
+            }
         }
     }
 }

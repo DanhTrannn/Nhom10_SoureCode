@@ -21,11 +21,16 @@ namespace MoviesManager
             db = new DataBase();
         }
 
-        public void AddMovie(Movies movie)
+        public void AddMovie(Movies newmovie)
         {
-            _data.movies.AddLast(movie);
-            Console.WriteLine("Movie is successfully added!");
-            db.saveMovieData(_data);
+            Movies check = _data.movies.Find(mv => mv.movieID == newmovie.movieID);
+            if (!check.Equals(default(Movies)))
+            {
+                _data.movies.AddLast(newmovie);
+                _data.undo.Push(new UndoAction("Add", newmovie));
+                Console.WriteLine("Movie is successfully added!");
+                db.saveMovieData(_data);
+            }
         }
         public void RemoveMovie(string targetID)
         {
@@ -43,6 +48,7 @@ namespace MoviesManager
             {
                 // Xóa phim khỏi danh sách
                 _data.movies.Remove(mv => mv.movieID == targetID);
+                _data.undo.Push(new UndoAction("Remove",deletedMovie));
                 Console.WriteLine("Movie is successfully deleted!");
                 db.saveMovieData(_data);
             }
@@ -54,9 +60,11 @@ namespace MoviesManager
 
         public void UpdateMovie(Movies updatedMovie)
         {
+            Movies oldMovie = _data.movies.Find(mv => mv.movieID == updatedMovie.movieID);
             bool updated = _data.movies.Update(mv => mv.movieID == updatedMovie.movieID, updatedMovie);
             if (updated)
             {
+                _data.undo.Push(new UndoAction("Update", oldMovie,updatedMovie));
                 Console.WriteLine("Movie is successfully updated!");
                 db.saveMovieData(_data);
             }
@@ -123,6 +131,40 @@ namespace MoviesManager
             else
             {
                 Console.WriteLine("Not found movie has name: " + movieName);
+            }
+        }
+        public void undo()
+        {
+            if(_data.undo.Count() > 0)
+            {
+                UndoAction lastAction = _data.undo.Pop();
+                if(lastAction.action.Equals("Add"))
+                {
+                    _data.movies.Remove(mv => mv.movieID == lastAction.oldmovie.movieID);
+                    Console.WriteLine("Undo success");
+                }
+                else if(lastAction.action.Equals("Remove"))
+                {
+                    _data.movies.AddLast(lastAction.oldmovie);
+                    Console.WriteLine("Undo success");
+                }
+                else if(lastAction.action.Equals("Update"))
+                {
+                    bool updated = _data.movies.Update(mv => mv.movieID == lastAction.oldmovie.movieID, lastAction.oldmovie);
+                    if (updated)
+                    {
+                        Console.WriteLine("Undo success");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error");
+                    }
+                }
+                db.saveMovieData(_data);
+            }
+            else
+            {
+                Console.WriteLine("No actions to undo.");
             }
         }
     }
