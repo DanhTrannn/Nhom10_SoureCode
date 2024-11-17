@@ -21,7 +21,7 @@ namespace CustomersManager
         public void AddCustomer(Customer newCustomer)
         {
             Customer check = _data.customers.Find(c => c.id == newCustomer.id);
-            if (!check.Equals(default(Customer)))
+            if (check.Equals(default(Customer)))
             {
                 _data.customers.AddLast(newCustomer);
                 _data.undo.Push(new UndoAction("Add", newCustomer));

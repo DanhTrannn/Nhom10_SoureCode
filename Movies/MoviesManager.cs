@@ -24,7 +24,7 @@ namespace MoviesManager
         public void AddMovie(Movies newmovie)
         {
             Movies check = _data.movies.Find(mv => mv.movieID == newmovie.movieID);
-            if (!check.Equals(default(Movies)))
+            if (check.Equals(default(Movies)))
             {
                 _data.movies.AddLast(newmovie);
                 _data.undo.Push(new UndoAction("Add", newmovie));

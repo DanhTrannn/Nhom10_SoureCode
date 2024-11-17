@@ -1,10 +1,4 @@
-345,HelloKitty,hoathinh,10h
-345,aaaa,ngu,5h
-12342321,HelloKityy,hoathinh,2h
-123,Test,test,3h
-789,asdad,ascas32,5h
-321,asfdad,affsaf,1h
-21414,adsasdqwaq,asdasda,3h
-asdasd,2141qdas,adsasd,241
-1,1,1,1
-2,5,5,5
+MV001,HelloKitty,hoathinh,120
+MV002,BlueLock,Anime,150
+MV003,OnePiece,Anime,180
+

@@ -21,7 +21,7 @@ namespace ShowtimeManager
         public void AddShowTime(ShowTime newShowTime)
         {
             ShowTime check = _data.showtimes.Find(st => st.movieID == newShowTime.movieID);
-            if(!check.Equals(default(ShowTime)))
+            if(check.Equals(default(ShowTime)))
             {
                 _data.showtimes.AddLast(newShowTime);
                 _data.undo.Push(new UndoAction("Add", newShowTime));
