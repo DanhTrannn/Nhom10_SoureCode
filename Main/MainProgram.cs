@@ -92,12 +92,9 @@ namespace main
                     string id = Console.ReadLine();
                     Console.Write("Enter Customer's Name: ");
                     string name = Console.ReadLine();
-                    Console.Write("Enter Customer's Email: ");
-                    string email = Console.ReadLine();
-                    Console.Write("Enter Customer's PhoneNumber: ");
-                    string phoneNumber = Console.ReadLine();
-                    Console.Write("Enter Customer's PersonalCode: ");
-                    string personalCode = Console.ReadLine();
+                    string email = GetValidEmail();
+                    string phoneNumber = GetValidPhoneNumber();
+                    string personalCode = GetValidPersonalCode();
                     Customer customer = new Customer(id, name, email, phoneNumber, personalCode);
                     customerManager.enterIntoLine(customer);
                     Console.Write("Press Enter to continue: ");
@@ -126,14 +123,11 @@ namespace main
                     
                     Console.Write("Enter Customer's ID want to edit: ");
                     string id = Console.ReadLine();
-                    Console.Write("Enter Customer's Name want to edit: ");
+                    Console.Write("Enter Customer's Name: ");
                     string name = Console.ReadLine();
-                    Console.Write("Enter Customer's Email want to edit: ");
-                    string email = Console.ReadLine();
-                    Console.Write("Enter Customer's PhoneNumber want to edit: ");
-                    string phoneNumber = Console.ReadLine();
-                    Console.Write("Enter Customer's PersonalCode want to edit: ");
-                    string personalCode = Console.ReadLine();
+                    string email = GetValidEmail();
+                    string phoneNumber = GetValidPhoneNumber();
+                    string personalCode = GetValidPersonalCode();
 
                     Customer updateCustomer = new Customer(id, name, email, phoneNumber, personalCode);
                     customerManager.UpdateCustomer(updateCustomer);
@@ -150,8 +144,7 @@ namespace main
                 }
                 else if (customerOptions == "7")
                 {
-                    Console.Write("Enter Customer's PhoneNumber want to find: ");
-                    string phonenumber = Console.ReadLine();
+                    string phonenumber = GetValidPhoneNumber();
                     customerManager.FindCustomer(phonenumber);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -385,6 +378,38 @@ namespace main
                     Console.WriteLine("Invalid choice, please try again!");
                 }
             }
+        }
+        public static string GetValidEmail()
+        {
+            string email;
+            do
+            {
+                Console.Write("Enter Customer's Email (@gmail.com): ");
+                email = Console.ReadLine();
+            } while (!email.EndsWith("@gmail.com"));
+            return email;
+        }
+
+        public static string GetValidPhoneNumber()
+        {
+            string phoneNumber;
+            do
+            {
+                Console.Write("Enter Customer's PhoneNumber (10 digits): ");
+                phoneNumber = Console.ReadLine();
+            } while (phoneNumber.Length != 10 || !long.TryParse(phoneNumber, out _));
+            return phoneNumber;
+        }
+
+        public static string GetValidPersonalCode()
+        {
+            string personalCode;
+            do
+            {
+                Console.Write("Enter Customer's PersonalCode (12 digits): ");
+                personalCode = Console.ReadLine();
+            } while (personalCode.Length != 12 || !long.TryParse(personalCode, out _));
+            return personalCode;
         }
     }
 }
