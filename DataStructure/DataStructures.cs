@@ -14,16 +14,14 @@ namespace datastructure
     {
         public string id;
         public string name;
-        public string email;
         public string phoneNumber;
-        public Customer(string id, string name, string email, string phoneNumber)
+        public Customer(string id, string name, string phoneNumber)
         {
             this.id = id;
             this.name = name;
-            this.email = email;
             this.phoneNumber = phoneNumber;
         }
-        public override string ToString() => $"Customer: {id}, {name}, {email}, {phoneNumber}";
+        public override string ToString() => $"Customer: {id}, {name}, {phoneNumber}";
     }
 
 

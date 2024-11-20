@@ -94,9 +94,8 @@ namespace main
                     string id = Console.ReadLine();
                     Console.Write("Enter Customer's Name: ");
                     string name = Console.ReadLine();
-                    string email = GetValidEmail();
                     string phoneNumber = GetValidPhoneNumber();
-                    Customer customer = new Customer(id, name, email, phoneNumber);
+                    Customer customer = new Customer(id, name, phoneNumber);
                     customerManager.enterIntoLine(customer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -126,10 +125,9 @@ namespace main
                     string id = Console.ReadLine();
                     Console.Write("Enter Customer's Name: ");
                     string name = Console.ReadLine();
-                    string email = GetValidEmail();
                     string phoneNumber = GetValidPhoneNumber();
 
-                    Customer updateCustomer = new Customer(id, name, email, phoneNumber);
+                    Customer updateCustomer = new Customer(id, name, phoneNumber);
                     customerManager.UpdateCustomer(updateCustomer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -363,7 +361,7 @@ namespace main
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
                 }
-                else if(showTimeOptions == "5")
+                else if (showTimeOptions == "5")
                 {
                     showTimeManager.undo();
                     Console.Write("Press Enter to continue: ");
@@ -379,17 +377,6 @@ namespace main
                 }
             }
         }
-        public static string GetValidEmail()
-        {
-            string email;
-            do
-            {
-                Console.Write("Enter Customer's Email (@gmail.com): ");
-                email = Console.ReadLine();
-            } while (!email.EndsWith("@gmail.com"));
-            return email;
-        }
-
         public static string GetValidPhoneNumber()
         {
             string phoneNumber;
