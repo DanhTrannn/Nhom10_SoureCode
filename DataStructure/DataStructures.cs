@@ -138,39 +138,6 @@ namespace datastructure
             }
             return default(T); // Trả về giá trị mặc định nếu không tìm thấy
         }
-        public void AddBehind(T value, Predicate<T> match)
-        {
-            Node<T> newNode = new Node<T>(value);
-            Node<T> current = head;
-            while(current != null)
-            {
-                if (match(current.data))
-                {
-                    newNode.next = current.next;
-                    current.next = newNode;
-                    size++;
-                    return;
-                }
-                current = current.next;
-            }
-        }
-        public T FindBefore(Predicate<T> match)
-        {
-            Node<T> current = head;
-            if (current != null && match(current.data))
-            {
-                return default(T); // Không có phần tử trước phần tử đầu tiên
-            }
-            while (current != null && current.next != null)
-            {
-                if (match(current.next.data))
-                {
-                    return current.data;
-                }
-                current = current.next;
-            }
-            return default(T);
-        }
         public bool Update(Predicate<T> match, T newData)
         {
             Node<T> current = head;
@@ -179,7 +146,7 @@ namespace datastructure
                 if (match(current.data))
                 {
                     current.data = newData;
-                    return true;    
+                    return true;   
                 }
                 current = current.next;
             }
@@ -351,28 +318,22 @@ namespace datastructure
     {
         public string action;
         public Customer oldcustomer;
-        public Customer newcustomer;
         public Movies oldmovie;
-        public Movies newmovie;
         public ShowTime oldshowtime;
-        public ShowTime newshowtime;
-        public UndoAction(string action, Customer oldcustomer, Customer newcustomer = default(Customer))
+        public UndoAction(string action, Customer oldcustomer)
         {
             this.action = action;
             this.oldcustomer = oldcustomer;
-            this.newcustomer = newcustomer;
         }
-        public UndoAction(string action, Movies oldmovie, Movies newmovie = default(Movies))
+        public UndoAction(string action, Movies oldmovie)
         {
             this.action = action;
             this.oldmovie = oldmovie;
-            this.newmovie = newmovie;
         }
-        public UndoAction(string action, ShowTime oldshowtime, ShowTime newshowtime = default(ShowTime))
+        public UndoAction(string action, ShowTime oldshowtime)
         {
             this.action = action;
             this.oldshowtime = oldshowtime;
-            this.newshowtime = newshowtime;
         }
     }
 }

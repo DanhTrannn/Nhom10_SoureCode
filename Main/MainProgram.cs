@@ -62,6 +62,8 @@ namespace main
                 else
                 {
                     Console.WriteLine("Invalid choice, please try again!");
+                    Console.Write("Press Enter to continue: ");
+                    Console.ReadLine();
                 }
             }
         }

@@ -31,6 +31,10 @@ namespace MoviesManager
                 Console.WriteLine("Movie is successfully added!");
                 db.saveMovieData(_data);
             }
+            else
+            {
+                Console.WriteLine("Have movies'ID " + newmovie.movieID + " can't add new, only update");
+            }
         }
         public void RemoveMovie(string targetID)
         {
@@ -64,7 +68,7 @@ namespace MoviesManager
             bool updated = _data.movies.Update(mv => mv.movieID == updatedMovie.movieID, updatedMovie);
             if (updated)
             {
-                _data.undo.Push(new UndoAction("Update", oldMovie,updatedMovie));
+                _data.undo.Push(new UndoAction("Update", oldMovie));
                 Console.WriteLine("Movie is successfully updated!");
                 db.saveMovieData(_data);
             }

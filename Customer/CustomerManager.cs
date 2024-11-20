@@ -30,7 +30,7 @@ namespace CustomersManager
             }
             else
             {
-                Console.WriteLine("Have customer's id: " + newCustomer.id + "can't add, only updated");
+                Console.WriteLine("Have customer's id: " + newCustomer.id + " can't add, only updated");
             }
         }
         public void RemoveCustomer(string targetID)
@@ -62,7 +62,7 @@ namespace CustomersManager
             bool update = _data.customers.Update(c => c.id == updateCustomer.id, updateCustomer);
             if (update)
             {
-                _data.undo.Push(new UndoAction("Update", oldCustomer, updateCustomer));
+                _data.undo.Push(new UndoAction("Update", oldCustomer));
                 Console.WriteLine("Customer is successfully updated!");
                 db.saveCustomerData(_data);
             }
@@ -84,21 +84,6 @@ namespace CustomersManager
                 Console.WriteLine("Customer with phone number " + targetPhoneNumber + " is not found!");
             }
         }
-        //public Customer getCustomerByID(string targetID)
-        //{
-        //    Customer res = _data.customers.Find(c => c.id == targetID);
-        //    return res;
-        //}
-        //public string findBefore(string targetID)
-        //{
-        //    Customer customerTarget = _data.customers.FindBefore(c => c.id == targetID);
-        //    return customerTarget.id;
-        //}
-        //public void addCustomerBehindByID(Customer customer, string targetID)
-        //{
-        //    _data.customers.AddBehind(customer, c => c.id == targetID);
-        //    db.saveCustomerData(_data);
-        //}
         public void enterIntoLine(Customer newCustomer)
         {
             _data.line.Enqueue(newCustomer);
@@ -122,7 +107,6 @@ namespace CustomersManager
         {
             if (_data.line.Count > 0)
             {
-                Console.WriteLine("Checkout successfully!");
                 Customer temp = _data.line.Dequeue();
                 AddCustomer(temp);
             }
