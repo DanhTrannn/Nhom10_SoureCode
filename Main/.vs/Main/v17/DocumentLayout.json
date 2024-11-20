@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}|..\\Showtime\\ShowtimeManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\showtime\\showtimemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{875991FD-F68D-412A-8F12-C646BCCCF821}|..\\Movies\\MoviesManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\movies\\moviesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\CustomerManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\customer\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FE94D95-B151-46C4-AA61-2779D3D0A282}|..\\Database\\Database.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E49DD99-05C9-41CE-8CD8-850401AA31D1}|Main.csproj|C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Main\\mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E49DD99-05C9-41CE-8CD8-850401AA31D1}|Main.csproj|solutionrelative:mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17F33017-5BDC-491F-AF89-47E0CBB27459}|..\\DataStructure\\DataStructure.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\datastructure\\datastructures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E49DD99-05C9-41CE-8CD8-850401AA31D1}|Main.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\main\\mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E49DD99-05C9-41CE-8CD8-850401AA31D1}|Main.csproj|solutionrelative:mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FE94D95-B151-46C4-AA61-2779D3D0A282}|..\\Database\\Database.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F46D61B-4B3E-4CE3-ACAB-6C86AA75E0A4}|..\\Customer\\CustomerManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\customer\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC6E4FA-2E50-4C39-806D-F5FDAC94DEBC}|..\\Showtime\\ShowtimeManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\showtime\\showtimemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{875991FD-F68D-412A-8F12-C646BCCCF821}|..\\Movies\\MoviesManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\movies\\moviesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{875991FD-F68D-412A-8F12-C646BCCCF821}|..\\Movies\\MoviesManager.csproj|c:\\users\\pc\\desktop\\nhom10_sourecode\\movies\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
@@ -47,24 +47,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "DataBase.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Database\\Database.cs",
               "RelativeDocumentMoniker": "..\\Database\\Database.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Database\\Database.cs",
               "RelativeToolTip": "..\\Database\\Database.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAAGoAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T14:22:23.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MoviesManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Movies\\MoviesManager.cs",
               "RelativeDocumentMoniker": "..\\Movies\\MoviesManager.cs",
@@ -72,31 +72,30 @@
               "RelativeToolTip": "..\\Movies\\MoviesManager.cs",
               "ViewState": "AgIAALAAAAAAAAAAAAAAAEYAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T13:20:30.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T13:20:30.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CustomerManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Customer\\CustomerManager.cs",
               "RelativeDocumentMoniker": "..\\Customer\\CustomerManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Customer\\CustomerManager.cs",
               "RelativeToolTip": "..\\Customer\\CustomerManager.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAGwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwGwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T13:56:21.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DataStructures.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\DataStructure\\DataStructures.cs",
               "RelativeDocumentMoniker": "..\\DataStructure\\DataStructures.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\DataStructure\\DataStructures.cs",
               "RelativeToolTip": "..\\DataStructure\\DataStructures.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwE8BAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T13:53:15.462Z",
               "EditorCaption": ""
@@ -113,20 +112,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MainProgram.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Main\\MainProgram.cs",
               "RelativeDocumentMoniker": "MainProgram.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Main\\MainProgram.cs",
               "RelativeToolTip": "MainProgram.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwEEAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAJQBAAAAAAAAAAAAAIMAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T15:35:19.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ShowtimeManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Nhom10_SoureCode\\Showtime\\ShowtimeManager.cs",
               "RelativeDocumentMoniker": "..\\Showtime\\ShowtimeManager.cs",
@@ -134,8 +133,7 @@
               "RelativeToolTip": "..\\Showtime\\ShowtimeManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T14:22:35.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T14:22:35.217Z"
             },
             {
               "$type": "Document",
@@ -147,8 +145,7 @@
               "RelativeToolTip": "..\\Movies\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-20T05:51:31.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T05:51:31.048Z"
             },
             {
               "$type": "Document",

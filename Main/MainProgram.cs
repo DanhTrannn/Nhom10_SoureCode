@@ -96,8 +96,7 @@ namespace main
                     string name = Console.ReadLine();
                     string email = GetValidEmail();
                     string phoneNumber = GetValidPhoneNumber();
-                    string personalCode = GetValidPersonalCode();
-                    Customer customer = new Customer(id, name, email, phoneNumber, personalCode);
+                    Customer customer = new Customer(id, name, email, phoneNumber);
                     customerManager.enterIntoLine(customer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -129,9 +128,8 @@ namespace main
                     string name = Console.ReadLine();
                     string email = GetValidEmail();
                     string phoneNumber = GetValidPhoneNumber();
-                    string personalCode = GetValidPersonalCode();
 
-                    Customer updateCustomer = new Customer(id, name, email, phoneNumber, personalCode);
+                    Customer updateCustomer = new Customer(id, name, email, phoneNumber);
                     customerManager.UpdateCustomer(updateCustomer);
                     Console.Write("Press Enter to continue: ");
                     Console.ReadLine();
@@ -401,17 +399,6 @@ namespace main
                 phoneNumber = Console.ReadLine();
             } while (phoneNumber.Length != 10 || !long.TryParse(phoneNumber, out _));
             return phoneNumber;
-        }
-
-        public static string GetValidPersonalCode()
-        {
-            string personalCode;
-            do
-            {
-                Console.Write("Enter Customer's PersonalCode (12 digits): ");
-                personalCode = Console.ReadLine();
-            } while (personalCode.Length != 12 || !long.TryParse(personalCode, out _));
-            return personalCode;
         }
     }
 }

@@ -29,14 +29,13 @@ namespace database
                     var parts = line.Split(',');
                     // Kiểm tra xem nếu 1 dòng có đủ 5 phần dữ liệu thì tạo một đối tượng Customer mới
                     // Sau đó thêm vào cấu trúc dữ liệu
-                    if (parts.Length == 5)
+                    if (parts.Length == 4)
                     {
                         Customer tmp = new Customer();
                         tmp.id = (parts[0]);
                         tmp.name = (parts[1]);
                         tmp.email = (parts[2]);
                         tmp.phoneNumber = (parts[3]);
-                        tmp.personalCode = (parts[4]);
                         data.customers.AddLast(tmp);
                     }
                 }
@@ -105,7 +104,7 @@ namespace database
                 while (current != null)
                 {
                     Customer customer = current.data;
-                    writer.WriteLine($"{customer.id},{customer.name},{customer.email},{customer.phoneNumber},{customer.personalCode}");
+                    writer.WriteLine($"{customer.id},{customer.name},{customer.email},{customer.phoneNumber}");
                     current = current.next;
                 }
             }
