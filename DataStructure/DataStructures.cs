@@ -24,7 +24,6 @@ namespace datastructure
         public override string ToString() => $"Customer: {id}, {name}, {phoneNumber}";
     }
 
-
     public struct Movies
     {
         public string movieID;
@@ -42,13 +41,11 @@ namespace datastructure
         public override string ToString() => $"Movie: {movieID}, {movieName}, {genre}, {duration}";
     }
 
-
     public struct ShowTime
     {
         public string movieID;
         public DateTime showDateTime;
         public string hall;
-
         public ShowTime(string movieID, DateTime showDateTime, string hall)
         {
             this.movieID = movieID;
@@ -101,8 +98,6 @@ namespace datastructure
         public void Remove(Predicate<T> match)
         {
             if (head == null) return;
-
-            // Nếu nút đầu tiên thỏa mãn điều kiện
             if (match(head.data))
             {
                 head = head.next;
@@ -116,7 +111,6 @@ namespace datastructure
             {
                 current = current.next;
             }
-
             if (current.next != null) // Kiểm tra nếu có nút cần xóa
             {
                 current.next = current.next.next;
@@ -158,7 +152,6 @@ namespace datastructure
             }
             Console.WriteLine();
         }
-
     }
     public class Queue<T>
     {

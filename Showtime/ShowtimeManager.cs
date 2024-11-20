@@ -20,10 +20,24 @@ namespace ShowtimeManager
         }
         public void AddShowTime(ShowTime newShowTime)
         {
-            _data.showtimes.AddLast(newShowTime);
-            _data.undo.Push(new UndoAction("Add", newShowTime));
-            Console.WriteLine("Showtime is successfully added!");
-            db.saveShowtimeData(_data);
+            ShowTime checkMovieID = _data.showtimes.Find(sht => sht.movieID == newShowTime.movieID);
+            ShowTime checkHall = _data.showtimes.Find(sht => sht.hall == newShowTime.hall);
+            ShowTime checkDateTime = _data.showtimes.Find(sht => sht.showDateTime == newShowTime.showDateTime);
+            if (checkMovieID.Equals(default(ShowTime)) && !checkHall.Equals(default(ShowTime)) && !checkDateTime.Equals(default(ShowTime)))
+            {
+                Console.WriteLine("Showtime already exist, can't add new one, only update!");
+            }
+            else if (!checkMovieID.Equals(default(ShowTime)) && !checkHall.Equals(default(ShowTime)) && !checkDateTime.Equals(default(ShowTime)))
+            {
+                Console.WriteLine("Showtime already exist, can't add new one, only update!");
+            }
+            else
+            {
+                _data.showtimes.AddLast(newShowTime);
+                _data.undo.Push(new UndoAction("Add", newShowTime));
+                Console.WriteLine("Showtime is successfully added!");
+                db.saveShowtimeData(_data);
+            }
         }
 
         public void RemoveShowTime(string targetID)
