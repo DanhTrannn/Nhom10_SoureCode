@@ -1,4 +1,2 @@
-MV001,HelloKitty,hoathinh,120
-MV002,BlueLock,Anime,150
-MV003,OnePiece,Anime,180
-
+MV01,doraemon,hoat hinh,100
+MV02,onepiece,anime,180

@@ -20,20 +20,19 @@ namespace MoviesManager
             _data = data;
             db = new DataBase();
         }
-
-        public void AddMovie(Movies newmovie)
+        public void AddMovie(Movies newMovie)
         {
-            Movies check = _data.movies.Find(mv => mv.movieID == newmovie.movieID);
+            Movies check = _data.movies.Find(mv => mv.movieID == newMovie.movieID);
             if (check.Equals(default(Movies)))
             {
-                _data.movies.AddLast(newmovie);
-                _data.undo.Push(new UndoAction("Add", newmovie));
+                _data.movies.AddLast(newMovie);
+                _data.undo.Push(new UndoAction("Add", newMovie));
                 Console.WriteLine("Movie is successfully added!");
                 db.saveMovieData(_data);
             }
             else
             {
-                Console.WriteLine("Have movies'ID " + newmovie.movieID + " can't add new, only update");
+                Console.WriteLine("Have movies'ID " + newMovie.movieID + " can't add new, only update");
             }
         }
         public void RemoveMovie(string targetID)
@@ -43,14 +42,9 @@ namespace MoviesManager
                 Console.WriteLine("Movies list is empty, can't remove");
                 return;
             }
-
-            // Tìm phim cần xóa
             Movies deletedMovie = _data.movies.Find(mv => mv.movieID == targetID);
-
-            // Kiểm tra nếu phim tồn tại
             if (!deletedMovie.Equals(default(Movies)))
             {
-                // Xóa phim khỏi danh sách
                 _data.movies.Remove(mv => mv.movieID == targetID);
                 _data.undo.Push(new UndoAction("Remove",deletedMovie));
                 Console.WriteLine("Movie is successfully deleted!");
@@ -79,7 +73,14 @@ namespace MoviesManager
         }
         public void DisplayMovie()
         {
-            _data.movies.Display();
+            if (_data.movies.size > 0)
+            {
+                _data.movies.Display();
+            }
+            else
+            {
+                Console.WriteLine("Nothing to display, please add new movie!");
+            }
         }
         public void FindMovie(string targetName)
         {
@@ -117,7 +118,7 @@ namespace MoviesManager
             {
                 if (_data.showtimes.size == 0)
                 {
-                    Console.WriteLine("Not found showtime's movie has name: " + movieName);
+                    Console.WriteLine("Not found any showtime has movie name: " + movieName);
                 }
                 else
                 {
@@ -134,7 +135,7 @@ namespace MoviesManager
             }
             else
             {
-                Console.WriteLine("Not found movie has name: " + movieName);
+                Console.WriteLine("Not found any movie has name: " + movieName);
             }
         }
         public void undo()
@@ -145,19 +146,19 @@ namespace MoviesManager
                 if(lastAction.action.Equals("Add"))
                 {
                     _data.movies.Remove(mv => mv.movieID == lastAction.oldmovie.movieID);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else if(lastAction.action.Equals("Remove"))
                 {
                     _data.movies.AddLast(lastAction.oldmovie);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else if(lastAction.action.Equals("Update"))
                 {
                     bool updated = _data.movies.Update(mv => mv.movieID == lastAction.oldmovie.movieID, lastAction.oldmovie);
                     if (updated)
                     {
-                        Console.WriteLine("Undo success");
+                        Console.WriteLine("Undo successfully!");
                     }
                     else
                     {
@@ -168,7 +169,7 @@ namespace MoviesManager
             }
             else
             {
-                Console.WriteLine("No actions to undo.");
+                Console.WriteLine("Nothing to undo!");
             }
         }
     }

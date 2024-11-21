@@ -27,7 +27,7 @@ namespace database
                 {
                     // Tách dữ liệu trên 1 dòng thông qua các dấu phẩy và trả về mảng parts
                     var parts = line.Split(',');
-                    // Kiểm tra xem nếu 1 dòng có đủ 5 phần dữ liệu thì tạo một đối tượng Customer mới
+                    // Kiểm tra xem nếu 1 dòng có đủ 3 phần dữ liệu thì tạo một đối tượng Customer mới
                     // Sau đó thêm vào cấu trúc dữ liệu
                     if (parts.Length == 3)
                     {
@@ -41,7 +41,7 @@ namespace database
             }
             else
             {
-                Console.WriteLine("Không tồn tại file: " + customerFilePath);
+                Console.WriteLine("File " + customerFilePath + "is not exist!");
             }
         }
 
@@ -66,7 +66,7 @@ namespace database
             }
             else
             {
-                Console.WriteLine("Không tồn tại file: " + movieFilePath);
+                Console.WriteLine("File " + movieFilePath + "is not exist!");
             }
         }
 
@@ -91,12 +91,13 @@ namespace database
             }
             else
             {
-                Console.WriteLine("Không tồn tại file: " + showTimeFilePath);
+                Console.WriteLine("File " + showTimeFilePath + "is not exist!");
             }
         }
 
         public void saveCustomerData(DataStructure data)
         {
+            // Ghi dữ liệu vào file
             using (var writer = new StreamWriter(customerFilePath))
             {
                 Node<Customer> current = data.customers.head;

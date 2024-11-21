@@ -12,7 +12,6 @@ namespace ShowtimeManager
     {
         private DataStructure _data;
         private DataBase db;
-
         public ShowTimeManager(DataStructure data)
         {
             this._data = data;
@@ -23,10 +22,12 @@ namespace ShowtimeManager
             ShowTime checkMovieID = _data.showtimes.Find(sht => sht.movieID == newShowTime.movieID);
             ShowTime checkHall = _data.showtimes.Find(sht => sht.hall == newShowTime.hall);
             ShowTime checkDateTime = _data.showtimes.Find(sht => sht.showDateTime == newShowTime.showDateTime);
+            // Nếu đã có phim khác chiếu trùng giờ với phim cần thêm
             if (checkMovieID.Equals(default(ShowTime)) && !checkHall.Equals(default(ShowTime)) && !checkDateTime.Equals(default(ShowTime)))
             {
                 Console.WriteLine("Showtime already exist, can't add new one, only update!");
             }
+            // Nếu phim, giờ chiếu và rạp đã tồn tại
             else if (!checkMovieID.Equals(default(ShowTime)) && !checkHall.Equals(default(ShowTime)) && !checkDateTime.Equals(default(ShowTime)))
             {
                 Console.WriteLine("Showtime already exist, can't add new one, only update!");
@@ -39,7 +40,6 @@ namespace ShowtimeManager
                 db.saveShowtimeData(_data);
             }
         }
-
         public void RemoveShowTime(string targetID)
         {
             if (_data.showtimes.size == 0)
@@ -61,7 +61,6 @@ namespace ShowtimeManager
                 Console.WriteLine("Showtime with ID " + targetID + " is not found!");
             }
         }
-
         public void UpdateShowTime(ShowTime newShowTime)
         {
             ShowTime oldShowTime = _data.showtimes.Find(st => st.movieID == newShowTime.movieID);
@@ -77,10 +76,16 @@ namespace ShowtimeManager
                 Console.WriteLine("Showtime with ID " + newShowTime.movieID + " is not found!");
             }
         }
-
         public void DisplayShowTime()
         {
-            _data.showtimes.Display();
+            if (_data.showtimes.size > 0)
+            {
+                _data.showtimes.Display();
+            }
+            else
+            {
+                Console.WriteLine("Nothing to display, please add new showtime!");
+            }
         }
         public void undo()
         {
@@ -90,23 +95,23 @@ namespace ShowtimeManager
                 if (lastAction.action.Equals("Add"))
                 {
                     _data.showtimes.Remove(st => st.movieID == lastAction.oldshowtime.movieID);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else if (lastAction.action.Equals("Remove"))
                 {
                     _data.showtimes.AddLast(lastAction.oldshowtime);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else if (lastAction.action.Equals("Update"))
                 {
                     _data.showtimes.Update(st => st.movieID == lastAction.oldshowtime.movieID, lastAction.oldshowtime);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 db.saveShowtimeData(_data);
             }
             else
             {
-                Console.WriteLine("No action");
+                Console.WriteLine("Nothing to undo!");
             }
         }
     }

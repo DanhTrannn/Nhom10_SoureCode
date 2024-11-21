@@ -21,6 +21,7 @@ namespace datastructure
             this.name = name;
             this.phoneNumber = phoneNumber;
         }
+        // Ghi đè lại phương thức khi in ra màn hình
         public override string ToString() => $"Customer: {id}, {name}, {phoneNumber}";
     }
 
@@ -30,7 +31,6 @@ namespace datastructure
         public string movieName;
         public string genre;
         public string duration;
-
         public Movies(string movieID, string movieName, string genre, string duration)
         {
             this.movieID = movieID;
@@ -54,6 +54,7 @@ namespace datastructure
         }
         public override string ToString() => $"ShowTime: {showDateTime}, {hall}";
     }
+
     public class Node<T>
     {
         public T data;
@@ -95,6 +96,7 @@ namespace datastructure
             }
             size++;
         }
+        // Xoá một Node theo một biểu thức điều kiện cụ thể
         public void Remove(Predicate<T> match)
         {
             if (head == null) return;
@@ -106,12 +108,11 @@ namespace datastructure
             }
 
             Node<T> current = head;
-
             while (current.next != null && !match(current.next.data))
             {
                 current = current.next;
             }
-            if (current.next != null) // Kiểm tra nếu có nút cần xóa
+            if (current.next != null)
             {
                 current.next = current.next.next;
                 size--;
@@ -123,10 +124,14 @@ namespace datastructure
             while (current != null)
             {
                 if (match(current.data))
-                    return current.data; // Trả về phần tử nếu thỏa mãn điều kiện
+                {
+                    // Trả về phần tử nếu thỏa mãn điều kiện
+                    return current.data;
+                }
                 current = current.next;
             }
-            return default(T); // Trả về giá trị mặc định nếu không tìm thấy
+            // Trả về giá trị mặc định nếu không tìm thấy
+            return default(T); 
         }
         public bool Update(Predicate<T> match, T newData)
         {
@@ -199,7 +204,7 @@ namespace datastructure
             Node<T> tmp = front;
             front = tmp.next;
             T tempValue = tmp.data;
-            if(front == null)
+            if (front == null)
             {
                 rear = null;
             }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -30,19 +31,21 @@ namespace CustomersManager
             }
             else
             {
-                Console.WriteLine("Have customer's id: " + newCustomer.id + " can't add, only updated");
+                Console.WriteLine("Customer with ID: " + newCustomer.id + " already exist, can't add new one, only update!");
             }
         }
         public void RemoveCustomer(string targetID)
         {
             if (_data.customers.size == 0)
             {
-                Console.WriteLine("Customer list is empty, can't remove!!");
+                Console.WriteLine("Customers list is empty, can't remove!!");
                 return;
             }
             else
             {
+                // Lưu trữ khách hàng trước khi xoá
                 Customer deletedCustomer = _data.customers.Find(c => c.id == targetID);
+                // Nếu tìm thấy khách hàng có ID cần xoá
                 if (!deletedCustomer.Equals(default(Customer)))
                 {
                     _data.customers.Remove(c => c.id == targetID);
@@ -58,6 +61,7 @@ namespace CustomersManager
         }
         public void UpdateCustomer(Customer updateCustomer)
         {
+            // Lưu trữ trạng thái khách hàng trước khi cập nhật
             Customer oldCustomer = _data.customers.Find(c => c.id == updateCustomer.id);
             bool update = _data.customers.Update(c => c.id == updateCustomer.id, updateCustomer);
             if (update)
@@ -101,7 +105,6 @@ namespace CustomersManager
             {
                 Console.WriteLine("Line is empty, no one is waiting now!");
             }
-
         }
         public void checkOutComplete()
         {
@@ -117,11 +120,25 @@ namespace CustomersManager
         }
         public void showCustomerInLine()
         {
-            _data.line.Display();
+            if ( _data.line.Count > 0)
+            {
+                _data.line.Display();
+            }
+            else
+            {
+                Console.WriteLine("Line is empty, there aren't any customers waiting!");
+            }
         }
         public void DisplayCustomer()
         {
-            _data.customers.Display();
+            if( _data.customers.size > 0)
+            {
+                _data.customers.Display();
+            }
+            else
+            {
+                Console.WriteLine("Nothing to display, please add new customer!");
+            }
         }
         public void undo()
         {
@@ -131,16 +148,16 @@ namespace CustomersManager
                 if(lastAction.action.Equals("Add"))
                 {
                     _data.customers.Remove(c => c.id == lastAction.oldcustomer.id);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }else if(lastAction.action.Equals("Remove"))
                 {
                     _data.customers.AddLast(lastAction.oldcustomer);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else if(lastAction.action.Equals("Update"))
                 {
                     _data.customers.Update(c => c.id == lastAction.oldcustomer.id, lastAction.oldcustomer);
-                    Console.WriteLine("Undo success");
+                    Console.WriteLine("Undo successfully!");
                 }
                 else
                 {
@@ -150,7 +167,7 @@ namespace CustomersManager
             }
             else
             {
-                Console.WriteLine("No actions to undo.");
+                Console.WriteLine("Nothing to undo!");
             }
         }
     }

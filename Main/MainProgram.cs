@@ -19,6 +19,7 @@ namespace main
         {
             DataStructure data = new DataStructure();
             DataBase db = new DataBase();
+            // Đảm bảo dữ liệu được thêm vào các file
             db.loadCustomerData(data);
             db.loadMovieData(data);
             db.loadShowtimeData(data);
@@ -95,6 +96,7 @@ namespace main
                     Console.Write("Enter Customer's Name: ");
                     string name = Console.ReadLine();
                     string phoneNumber = GetValidPhoneNumber();
+
                     Customer customer = new Customer(id, name, phoneNumber);
                     customerManager.enterIntoLine(customer);
                     Console.Write("Press Enter to continue: ");
@@ -120,7 +122,6 @@ namespace main
                 }
                 else if(customerOptions == "5")
                 {
-                    
                     Console.Write("Enter Customer's ID want to edit: ");
                     string id = Console.ReadLine();
                     Console.Write("Enter Customer's Name: ");
@@ -334,7 +335,7 @@ namespace main
                     do
                     {
                         check = false;
-                        Console.Write("Enter Movie's Date and Time (format yyyy-MM-dd HH:mm:ss): ");
+                        Console.Write("Enter Movie's Date and Time (format yyyy-MM-dd HH:mm:ss AM/PM): ");
                         string input = Console.ReadLine();
                         try
                         {
