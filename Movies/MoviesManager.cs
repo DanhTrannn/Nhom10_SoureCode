@@ -107,7 +107,7 @@ namespace MoviesManager
             Node<Movies> tmp = _data.movies.head;
             while(tmp != null)
             {
-                if(tmp.data.movieName == movieName)
+                if(tmp.data.movieName.ToLower() == movieName.ToLower())
                 {
                     movieID = tmp.data.movieID;
                     break;
